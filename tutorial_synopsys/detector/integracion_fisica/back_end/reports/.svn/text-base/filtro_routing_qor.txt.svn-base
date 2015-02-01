@@ -1,0 +1,183 @@
+
+  Loading design 'filtro_pipelining'
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+Error: extract_rc has abnormally terminated.  (OPT-100)
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : filtro_pipelining
+Version: E-2010.12-ICC-SP1
+Date   : Tue Mar 22 16:14:15 2011
+****************************************
+
+
+  Timing Path Group 'filtro_pipelining_clk_2x'
+  -----------------------------------
+  Levels of Logic:               5.00
+  Critical Path Length:          0.64
+  Critical Path Slack:       11257.54
+  Critical Path Clk Period:  22675.70
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[0]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11309.47
+  Critical Path Clk Period:  45351.50
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -15.33
+  Total Hold Violation:      -1290.27
+  No. of Hold Violations:       95.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[1]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11309.58
+  Critical Path Clk Period:  90703.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -15.33
+  Total Hold Violation:      -1290.27
+  No. of Hold Violations:       95.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[2]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11249.57
+  Critical Path Clk Period: 181406.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -15.33
+  Total Hold Violation:      -1387.32
+  No. of Hold Violations:      111.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[3]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11203.57
+  Critical Path Clk Period: 362812.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[4]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11203.57
+  Critical Path Clk Period: 725624.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[5]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11241.57
+  Critical Path Clk Period:
+                           1451250.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -45.47
+  Total Hold Violation:      -4154.18
+  No. of Hold Violations:       95.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[6]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11255.57
+  Critical Path Clk Period:
+                           2902500.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -91.45
+  Total Hold Violation:      -8522.44
+  No. of Hold Violations:       95.00
+  -----------------------------------
+
+  Timing Path Group 'filtro_pipelining_clk_banda[7]'
+  -----------------------------------
+  Levels of Logic:              54.00
+  Critical Path Length:         27.73
+  Critical Path Slack:       11253.57
+  Critical Path Clk Period:
+                           5804990.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        105
+  Hierarchical Port Count:       7742
+  Leaf Cell Count:               3019
+  Buf/Inv Cell Count:             619
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      1944
+  Sequential Cell Count:         1075
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   972918.000000
+  Noncombinational Area:
+                       1694880.000000
+  Net Area:                  0.000000
+  Net XLength        :           0.00
+  Net YLength        :           0.00
+  -----------------------------------
+  Cell Area:           2667798.000000
+  Design Area:         2667798.000000
+  Net Length        :            0.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          3711
+  Nets With Violations:             0
+  -----------------------------------
+
+
+  Hostname: zener.ie.itcr.ac.cr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.00
+  Mapping Optimization:                0.00
+  -----------------------------------------
+  Overall Compile Time:                0.00
+  Overall Compile Wall Clock Time:     0.00
+
+1

@@ -1,0 +1,2 @@
+nanosim -nvlog filtro_phy.v -nvec filtro.vec -nspice supply.spi ./spice/* -nspef filtro_phy.spef -C cfg_filtro -m filtro_pipelining -o db/filtro -t 700000n -out wdb
+

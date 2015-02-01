@@ -1,0 +1,19 @@
+Information: Net 'SNPS_LOGIC0' has no connections. (MWDC-040)
+Information: Net 'ganancia_alto/SNPS_LOGIC0' has no connections. (MWDC-040)
+Information: Net 'ganancia_bajo/SNPS_LOGIC0' has no connections. (MWDC-040)
+Information: Net 'coeficiente_b12_H/SNPS_LOGIC0' has no connections. (MWDC-040)
+Information: Net 'coeficiente_b12_L/SNPS_LOGIC0' has no connections. (MWDC-040)
+Information: Net 'coeficiente_a22/SNPS_LOGIC0' has no connections. (MWDC-040)
+Warning: Could not find valid driver for hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find valid driver for hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'filtro_pipelining'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (106 designs)             filtro_pipelining.CEL, etc
+  osu05_stdcells (library)    /home/jvalverde/synopsys/filtro_pipelining/front_end/libs/osu05_stdcells.db
+
+Warning: Should load physical library before reading this design, which has physical information. (MWDC-172)
+Warning: Should load physical library before reading this design, which has physical information. (MWDC-172)
+Error: Floorplan loading failed.
+0

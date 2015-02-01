@@ -1,0 +1,43 @@
+set_ckt_ctrl bus_notation:"[:]"
+report_block_powr * *
+report_node_powr GND VDD
+set_print_tres 10ps
+set_print_format shorted_alias=1
+;set_ckt_ctrl cspf_file:"filtro_phy.spef"
+set_ckt_ctrl ba_power_nets:"1"
+;use_sim_case l
+
+print_node_logic filtro_syn_testbench.filtro_pipelining_clk_2x 
+print_node_logic filtro_syn_testbench.reset 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[0] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[1] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[2] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[3] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[4] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[5] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[6] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[7] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[8] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[9] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[10] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[11] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[12] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[13] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[14] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[15] 
+print_node_v filtro_syn_testbench.banda0[0] 
+print_node_v filtro_syn_testbench.banda0[1] 
+print_node_v filtro_syn_testbench.banda0[2] 
+print_node_v filtro_syn_testbench.banda0[3] 
+print_node_v filtro_syn_testbench.banda0[4] 
+print_node_v filtro_syn_testbench.banda0[5] 
+print_node_v filtro_syn_testbench.banda0[6] 
+print_node_v filtro_syn_testbench.banda0[7] 
+print_node_v filtro_syn_testbench.banda0[8] 
+print_node_v filtro_syn_testbench.banda0[9] 
+print_node_v filtro_syn_testbench.banda0[10] 
+print_node_v filtro_syn_testbench.banda0[11] 
+print_node_v filtro_syn_testbench.banda0[12] 
+print_node_v filtro_syn_testbench.banda0[13] 
+print_node_v filtro_syn_testbench.banda0[14] 
+print_node_v filtro_syn_testbench.banda0[15] 

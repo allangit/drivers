@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/back_end/reports
+END
+filtro_place.setup.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/BancoFiltros/!svn/ver/33/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_place.setup.txt
+END
+filtro_placement_util.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/BancoFiltros/!svn/ver/27/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_placement_util.txt
+END
+filtro_routing.setup.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/BancoFiltros/!svn/ver/27/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_routing.setup.txt
+END
+filtro_routing_qor.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_routing_qor.txt
+END
+filtro_place.hold.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/BancoFiltros/!svn/ver/33/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_place.hold.txt
+END
+filtro_placement_qor.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/BancoFiltros/!svn/ver/33/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_placement_qor.txt
+END
+filtro_routing.hold.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/BancoFiltros/!svn/ver/27/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_routing.hold.txt
+END
+filtro_place_util.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/BancoFiltros/!svn/ver/6/trunk/filtro_pipelining/integracion_fisica/back_end/reports/filtro_place_util.txt
+END

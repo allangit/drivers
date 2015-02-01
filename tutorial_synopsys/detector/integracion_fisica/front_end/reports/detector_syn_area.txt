@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : area
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/achacon/VLSI/Curso_EDA_Uruguay/tutorial_synopsys/detector/integracion_fisica/front_end/libs/saed90nm_typ.db)
+
+Number of ports:                            4
+Number of nets:                            12
+Number of cells:                            9
+Number of combinational cells:              6
+Number of sequential cells:                 2
+Number of macros:                           0
+Number of buf/inv:                          1
+Number of references:                       9
+
+Combinational area:         60.825601
+Noncombinational area:      88.473600
+Net Interconnect area:       2.674399  
+
+Total cell area:           149.299201
+Total area:                151.973600
+1

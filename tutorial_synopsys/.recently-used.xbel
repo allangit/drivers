@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/tutorial_synopsys/manual_synopsys.pdf" added="2012-02-06T15:38:50Z" modified="2012-02-07T15:55:46Z" visited="2012-02-06T15:38:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328630146" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/front_end/.synopsys_dc.setup" added="2012-02-06T15:55:18Z" modified="2012-02-06T17:08:24Z" visited="2012-02-06T15:55:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328548104" count="10"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/front_end/scripts/detector_syn.tcl" added="2012-02-06T15:57:04Z" modified="2012-02-06T21:27:14Z" visited="2012-02-06T15:57:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328563634" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/front_end/scripts/detector_syn_constraints.tcl" added="2012-02-06T16:13:27Z" modified="2012-02-06T16:33:34Z" visited="2012-02-06T16:13:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328546014" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/front_end/.synopsys_dc.setup~" added="2012-02-06T17:10:18Z" modified="2012-02-06T17:10:18Z" visited="2012-02-06T17:10:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328548218" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/tutorial_synopsys/detector/integracion_fisica/front_end/.synopsys_dc.setup" added="2012-02-06T17:20:37Z" modified="2012-02-06T17:20:37Z" visited="2012-02-06T17:20:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328548837" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/back_end/scripts/detector_phy.tcl" added="2012-02-06T20:11:53Z" modified="2012-02-06T20:20:59Z" visited="2012-02-06T20:11:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328559659" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/back_end/detector_phy.tcl" added="2012-02-06T20:16:17Z" modified="2012-02-06T20:16:17Z" visited="2012-02-06T20:16:17Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328559377" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/temporizado_layout/scripts/detector_tim.tcl" added="2012-02-06T20:22:57Z" modified="2012-02-06T20:23:57Z" visited="2012-02-06T20:22:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328559837" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/detector/integracion_fisica/temporizado_layout/reports/criticas_tran_cap.txt" added="2012-02-06T20:28:19Z" modified="2012-02-06T20:28:19Z" visited="2012-02-06T20:28:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328560099" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/top_linear_est.v" added="2012-02-06T21:22:07Z" modified="2012-02-07T16:06:29Z" visited="2012-02-06T21:22:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328630789" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/integracion_fisica/front_end/.synopsys_dc.setup" added="2012-02-06T21:53:57Z" modified="2012-02-06T21:55:49Z" visited="2012-02-06T21:53:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328565349" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/integracion_fisica/front_end/scripts/detector_syn.tcl" added="2012-02-06T21:56:26Z" modified="2012-02-06T21:56:32Z" visited="2012-02-06T21:56:26Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-tcl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328565392" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/linear_est_2.v" added="2012-02-07T16:02:08Z" modified="2012-02-07T16:02:08Z" visited="2012-02-07T16:02:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328630528" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/mult_booth.v" added="2012-02-07T16:02:57Z" modified="2012-02-07T16:02:57Z" visited="2012-02-07T16:02:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328630577" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/test_all_pads_final.v" added="2012-02-07T16:04:27Z" modified="2012-02-07T16:04:27Z" visited="2012-02-07T16:04:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328630667" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/estimador/tof_counter.v" added="2012-02-07T16:05:00Z" modified="2012-02-07T16:05:00Z" visited="2012-02-07T16:05:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328630700" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/libros_ppts/Libros/fundamentals.of.microelectronics.pdf" added="2012-02-07T16:34:28Z" modified="2012-02-07T16:34:28Z" visited="2012-02-07T16:34:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328632468" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/libros_ppts/Curso_Synopsys_Updated_ppts/analog_integrated_circuits_lectures.zip" added="2012-02-07T16:38:10Z" modified="2012-02-07T16:38:10Z" visited="2012-02-07T16:38:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="File Roller" exec="file-roller %u" timestamp="1328632690" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/fr-aX0vHO/analog_integrated_circuits_lectures/analog_integrated_circuits_lecture.ppt" added="2012-02-07T16:38:36Z" modified="2012-02-07T16:38:46Z" visited="2012-02-07T16:38:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-powerpoint"/>
+        <bookmark:applications>
+          <bookmark:application name="OpenOffice.org 2.3" exec="soffice %u" timestamp="1328632726" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/fr-bAEbKM/analog_integrated_circuits_lectures/analog_integrated_circuits_lecture1.ppt" added="2012-02-07T16:38:51Z" modified="2012-02-07T16:39:03Z" visited="2012-02-07T16:38:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-powerpoint"/>
+        <bookmark:applications>
+          <bookmark:application name="OpenOffice.org 2.3" exec="soffice %u" timestamp="1328632743" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/libros_ppts/Curso_Synopsys_Updated_ppts/analog_integrated_circuits_lectures/analog_integrated_circuits_lecture4.pdf" added="2012-02-07T16:39:49Z" modified="2012-02-07T16:39:49Z" visited="2012-02-07T16:39:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328632789" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/mentor/curso_mentor_v2.pdf" added="2012-02-07T16:40:31Z" modified="2012-02-21T21:00:23Z" visited="2012-02-07T16:40:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329858023" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/Synopsys/ASIC_design_flow_tutorial_using_synopsys_tools.pdf" added="2012-02-07T16:41:29Z" modified="2012-02-07T16:41:29Z" visited="2012-02-07T16:41:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328632889" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/fundamentals.of.microelectronics.pdf" added="2012-02-07T17:04:42Z" modified="2012-02-07T17:31:34Z" visited="2012-02-07T17:04:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328635894" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/mentor/mgc/ams_2008_2a/questasim/v6.4c/examples/tutorials/verilog/basicSimulation/tcounter.v" added="2012-02-07T17:38:14Z" modified="2012-02-07T17:38:14Z" visited="2012-02-07T17:38:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328636294" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/tmp/fundamentals.of.microelectronics.pdf" added="2012-02-07T20:33:59Z" modified="2012-02-07T20:33:59Z" visited="2012-02-07T20:33:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1328646839" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/memory/data_mem.mem" added="2012-02-08T22:40:09Z" modified="2012-02-08T22:40:09Z" visited="2012-02-08T22:40:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328740809" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/memory/reloc.mem" added="2012-02-08T22:51:10Z" modified="2012-02-08T22:51:10Z" visited="2012-02-08T22:51:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328741470" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/ch12/dram_controller/compile.do" added="2012-02-09T18:23:14Z" modified="2012-02-09T18:23:14Z" visited="2012-02-09T18:23:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328811794" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/mentor/mgc/ams_2008_2a/questasim/v6.4c/LICENSE" added="2012-02-09T19:03:04Z" modified="2012-02-09T19:03:04Z" visited="2012-02-09T19:03:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328814184" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/mentor/mgc/adk3_1/version.txt" added="2012-02-09T21:39:49Z" modified="2012-02-09T21:39:49Z" visited="2012-02-09T21:39:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1328823589" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/dwhelper" added="2012-02-15T17:28:04Z" modified="2012-02-15T17:28:04Z" visited="2012-02-15T17:28:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329326884" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/172.16.21.5%40gabo" added="2012-02-15T17:28:35Z" modified="2012-02-15T17:28:35Z" visited="2012-02-15T17:28:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329326915" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/stanic_report_2007.pdf" added="2012-02-15T17:29:57Z" modified="2012-02-15T19:21:29Z" visited="2012-02-15T17:29:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329333689" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/BSIM%20Manual/CHAP1N.pdf" added="2012-02-15T17:48:02Z" modified="2012-02-15T17:48:02Z" visited="2012-02-15T17:48:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329328082" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/BSIM%20Manual/COVER.pdf" added="2012-02-15T17:48:20Z" modified="2012-02-15T17:48:20Z" visited="2012-02-15T17:48:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329328100" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/mentor/mgc/ams_2008_2a/questasim/v6.4c/docs/pdfdocs/questa_afv_tut.pdf" added="2012-02-15T20:51:21Z" modified="2012-02-15T20:51:21Z" visited="2012-02-15T20:51:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329339081" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/mentor/mgc/ams_2008_2a/questasim/v6.4c/docs/pdfdocs/questa_afv_ref.pdf" added="2012-02-15T20:51:44Z" modified="2012-02-15T20:51:44Z" visited="2012-02-15T20:51:44Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329339104" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/tags/release-1.0/filtro_pipelining/vhdl/original/def_MAPx.vhd" added="2012-02-20T20:54:53Z" modified="2012-02-20T20:54:53Z" visited="2012-02-20T20:54:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1329771293" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/tags/release-1.0/filtro_pipelining/vhdl/original/filtro_pipelining.vhd" added="2012-02-20T20:55:44Z" modified="2012-02-20T20:55:44Z" visited="2012-02-20T20:55:44Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1329771344" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///datos/Xilinx/doc/libros_ppts/Curso_Synopsys_Updated_ppts/analog_integrated_circuits_lectures/analog_integrated_circuits_lecture1.pdf" added="2012-02-21T20:56:27Z" modified="2012-02-21T20:56:27Z" visited="2012-02-21T20:56:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1329857787" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/source/work/contador/_parsed.vhd" added="2012-03-05T23:46:12Z" modified="2012-03-05T23:46:12Z" visited="2012-03-05T23:46:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1330991172" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/source/def_MAPx.vhd" added="2012-03-06T16:09:37Z" modified="2012-03-06T16:09:37Z" visited="2012-03-06T16:09:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331050177" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/reports/SiRPA_resources.txt" added="2012-03-06T17:02:20Z" modified="2012-03-06T17:02:20Z" visited="2012-03-06T17:02:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331053340" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/reports/SiRPA_cell.txt" added="2012-03-06T17:02:41Z" modified="2012-03-06T17:02:41Z" visited="2012-03-06T17:02:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331053361" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/reports/SiRPA_area.txt" added="2012-03-06T17:03:07Z" modified="2012-03-06T17:03:07Z" visited="2012-03-06T17:03:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331053387" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/SiRPA/integracion_fisica/front_end/.synopsys_dc.setup" added="2012-03-06T17:10:09Z" modified="2012-03-06T17:10:58Z" visited="2012-03-06T17:10:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331053858" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/KD_Tree/vhdl/original/Kd_tree.vhd" added="2012-03-07T17:33:53Z" modified="2012-03-07T17:33:53Z" visited="2012-03-07T17:33:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331141633" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/SiRPA/integracion_fisica/front_end/source/Kd_tree.vhd" added="2012-03-07T17:34:37Z" modified="2012-03-07T17:34:37Z" visited="2012-03-07T17:34:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331141677" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/KD_Tree/integracion_fisica/front_end/source/Kd_tree.vhd" added="2012-03-07T17:36:19Z" modified="2012-03-07T17:36:19Z" visited="2012-03-07T17:36:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331141779" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/BancoFiltros/trunk/doc/tesis%20SiRPA.pdf" added="2012-03-08T15:55:35Z" modified="2012-03-08T15:55:35Z" visited="2012-03-08T15:55:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1331222135" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/questa_afv_tut.pdf" added="2012-03-13T16:34:37Z" modified="2012-03-13T16:34:37Z" visited="2012-03-13T16:34:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1331656477" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/questa_afv_user.pdf" added="2012-03-13T16:36:18Z" modified="2012-03-13T16:36:18Z" visited="2012-03-13T16:36:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Evince Document Viewer" exec="evince %u" timestamp="1331656578" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/wave.do" added="2012-03-13T16:48:59Z" modified="2012-03-13T16:48:59Z" visited="2012-03-13T16:48:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331657339" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/ch12/dram_controller/run_demo.do" added="2012-03-13T16:52:52Z" modified="2012-03-13T16:52:52Z" visited="2012-03-13T16:52:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331657572" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/coverage/test_sm.v" added="2012-03-13T16:53:54Z" modified="2012-03-21T16:54:42Z" visited="2012-03-13T16:53:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332348882" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/coverage/sm.v" added="2012-03-13T16:55:21Z" modified="2012-03-21T16:55:14Z" visited="2012-03-13T16:55:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332348914" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/coverage/beh_sram.v" added="2012-03-13T16:55:41Z" modified="2012-03-13T16:55:41Z" visited="2012-03-13T16:55:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1331657741" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/filtro_pipelining/vhdl/original/flitro_pipelining_PT_tb.vhd" added="2012-03-21T16:11:56Z" modified="2012-03-21T16:11:56Z" visited="2012-03-21T16:11:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332346316" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/filtro_pipelining/vhdl/original/filtro_pipelining_tb_tb.vhd" added="2012-03-21T16:13:58Z" modified="2012-03-21T16:13:58Z" visited="2012-03-21T16:13:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332346438" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/questa_tut/chapter9/coverage/radix.do" added="2012-03-21T16:55:52Z" modified="2012-03-21T16:55:52Z" visited="2012-03-21T16:55:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332348952" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/vhdl_fpga/test_SiRPA" added="2012-03-21T21:57:57Z" modified="2012-03-21T21:58:37Z" visited="2012-03-21T21:57:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332367117" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/vhdl_fpga/tests/test_SiRPA" added="2012-03-21T21:59:44Z" modified="2012-03-21T21:59:44Z" visited="2012-03-21T21:59:44Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332367184" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/vhdl_fpga/tests/test_SiRPA.vhd" added="2012-03-21T22:00:02Z" modified="2012-03-22T20:58:28Z" visited="2012-03-21T22:00:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332449908" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/gabo/copiatrabajoI/trunk/vhdl_fpga/tests/Plantilla_Test.vhd" added="2012-03-21T22:15:50Z" modified="2012-03-21T22:15:50Z" visited="2012-03-21T22:15:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-vhdl"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="gedit %u" timestamp="1332368150" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

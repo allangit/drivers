@@ -1,0 +1,81 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: divisor_frecuencia/clk_2_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  detector_secuencia ForQA                 saed90nm_typ
+  divisor_frecuencia ForQA                 saed90nm_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             2.00       2.00
+  input external delay                                    2.00       4.00 f
+  reset (in)                                              0.00       4.00 f
+  divisor_frecuencia/reset (divisor_frecuencia)           0.00       4.00 f
+  divisor_frecuencia/U3/QN (NOR2X0)                       0.08       4.08 r
+  divisor_frecuencia/clk_2_reg/D (DFFX1)                  0.04       4.13 r
+  data arrival time                                                  4.13
+
+  clock clk (rise edge)                                  20.00      20.00
+  clock network delay (ideal)                             2.00      22.00
+  clock uncertainty                                      -2.00      20.00
+  divisor_frecuencia/clk_2_reg/CLK (DFFX1)                0.00      20.00 r
+  library setup time                                     -0.08      19.92
+  data required time                                                19.92
+  --------------------------------------------------------------------------
+  data required time                                                19.92
+  data arrival time                                                 -4.13
+  --------------------------------------------------------------------------
+  slack (MET)                                                       15.79
+
+
+  Startpoint: dato (input port clocked by clk)
+  Endpoint: detectada (output port clocked by divisor_frecuencia/clk_2)
+  Path Group: divisor_frecuencia/clk_2
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  detector_secuencia ForQA                 saed90nm_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   20.00      20.00
+  clock network delay (ideal)              2.00      22.00
+  input external delay                     2.00      24.00 r
+  dato (in)                                0.00      24.00 r
+  U10/Q (AND3X1)                           0.11      24.11 r
+  detectada (out)                          0.00      24.12 r
+  data arrival time                                  24.12
+
+  clock divisor_frecuencia/clk_2 (rise edge)
+                                          40.00      40.00
+  clock network delay (ideal)              0.00      40.00
+  output external delay                   -4.00      36.00
+  data required time                                 36.00
+  -----------------------------------------------------------
+  data required time                                 36.00
+  data arrival time                                 -24.12
+  -----------------------------------------------------------
+  slack (MET)                                        11.88
+
+
+1

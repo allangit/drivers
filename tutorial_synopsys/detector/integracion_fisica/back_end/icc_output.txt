@@ -1,0 +1,317 @@
+icc_shell> start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/jvalverde/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Start to load technology file /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf.
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'NWELL' and 'DIFF'. (line 1920). (TFCHK-082)
+Warning: DesignRule attribute 'layer2' is assigned a non-physical layer 'DNW'. (line 1930) (TFCHK-079)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'NWELL' and 'DNW'. (line 1933). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'PO' and 'DIFF'. (line 1940). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'DIFF' and 'CO'. (line 1948). (TFCHK-082)
+Warning: DesignRule attribute 'layer2' is assigned a non-physical layer 'RPOLY'. (line 2134) (TFCHK-079)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'PIMP' and 'DIFF'. (line 2142). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'NIMP' and 'DIFF'. (line 2148). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'DIFF_25' and 'DIFF'. (line 2154). (TFCHK-082)
+Warning: DesignRule attribute 'layer1' is assigned a non-physical layer 'HVTIMP'. (line 2157) (TFCHK-079)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'HVTIMP' and 'DIFF'. (line 2160). (TFCHK-082)
+Warning: DesignRule attribute 'layer1' is assigned a non-physical layer 'LVTIMP'. (line 2163) (TFCHK-079)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'LVTIMP' and 'DIFF'. (line 2166). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'SBLK' and 'DIFF'. (line 2173). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'SBLK' and 'PO'. (line 2180). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'PIMP' and 'PO'. (line 2192). (TFCHK-082)
+Warning: DesignRule is defined with invalid metal-to-via enclosure layers 'NIMP' and 'PO'. (line 2198). (TFCHK-082)
+Warning: Layer 'M1' has a pitch 0.32 that does not match the recommended wire-to-via pitch 0.33. (TFCHK-049)
+Warning: Layer 'M2' has a pitch 0.32 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M3' has a pitch 0.64 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M4' has a pitch 0.64 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M5' has a pitch 1.28 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M6' has a pitch 1.28 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M7' has a pitch 2.56 that does not match the recommended wire-to-via pitch 0.36. (TFCHK-049)
+Warning: Layer 'M8' has a pitch 3.84 that does not match the recommended wire-to-via pitch 0.465 or 0.5. (TFCHK-049)
+Warning: Layer 'M9' has a pitch 5.12 that does not match the recommended wire-to-via pitch 0.935 or 0.9. (TFCHK-049)
+Technology file /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf has been loaded successfully.
+Error: Cannot open library /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr for read. (MW-006)
+ERROR : Fail to add reference library '/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/'
+Error: Fail to set mw reference libraries for '/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw' (MW-215)
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Skip layer map file
+Error: Cannot open cell detector_routing.CEL for read. (MW-004)
+write_gds failed!
+The GDSII file has been removed.
+icc_shell> uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/vlsi21/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Library '/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw' already exists. (MWUI-004)
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Skip layer map file
+Error: Cannot open cell detector_routing.CEL for read. (MW-004)
+write_gds failed!
+The GDSII file has been removed.
+icc_shell> uplevel #0 source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/jvalverde/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Error: Cannot open library /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw for read. (MW-006)
+icc_shell> uplevel #0 source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/jvalverde/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Error: Cannot open library /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw for read. (MW-006)
+icc_shell> uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/vlsi21/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Library '/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw' already exists. (MWUI-004)
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Skip layer map file
+Error: Cannot open cell detector_routing.CEL for read. (MW-004)
+write_gds failed!
+The GDSII file has been removed.
+icc_shell> uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/vlsi21/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Library '/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw' already exists. (MWUI-004)
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Skip layer map file
+Error: Cannot open cell detector_routing.CEL for read. (MW-004)
+write_gds failed!
+The GDSII file has been removed.
+icc_shell> uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+
+Settings:
+search_path:       /home/vlsi21/detector/integracion_fisica/back_end ./libs ./db ./source ./scripts
+link_library:      * saed90nm_max.db saed90nm_min.db saed90nm_typ.db
+target_library:    saed90nm_max.db
+symbol_library:    saed90nm.sdb
+Error: Cannot open library ./libs/saed90nm_fr/DETECTOR.mw for write. (MW-006)
+Error: No Milkyway library is open. (UID-666)
+Error: Current design is not defined. (UID-4)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+ERROR : can't get a lib Id from a non-cellId
+Error: 0
+        Use error_info for more info. (CMD-013)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No design is loaded. (VFP-003)
+Error: Cannot get cellId for the current design. (UIG-2)
+Error: Top cell not open. (ZRT-072)
+Error: Top cell not open. (ZRT-072)
+Error: Current design is not defined. (UID-4)
+Current design is not set
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: No files or designs were specified. (UID-22)
+No valid cell found, write_def command failed 
+Error: Cannot get cellId for the current design. (UIG-2)
+WARNING : No Fill/Notch/Gap cell would be output!
+Skip layer map file
+Error: Cannot open cell detector_routing.CEL for read. (MW-004)
+write_gds failed!
+The GDSII file has been removed.
+icc_shell> gui start
+Error: ambiguous command 'gui' matched 163 commands:
+        (gui_add_annotation, gui_add_ruler_point, gui_apply_error_filters ...) (CMD-006)
+icc_shell> start_gui
+icc_shell> clear
+Error: unknown command 'clear' (CMD-005)
+icc_shell> cls
+Error: unknown command 'cls' (CMD-005)
+icc_shell> cl
+Error: ambiguous command 'cl' matched 5 commands:
+        (clock_opt, clock_opt_feasibility, close_distributed_route ...) (CMD-006)
+icc_shell> clean
+Error: unknown command 'clean' (CMD-005)
+icc_shell> clear
+Error: unknown command 'clear' (CMD-005)
+icc_shell> cls
+Error: unknown command 'cls' (CMD-005)
+icc_shell> quit
+
+Thank you...
+

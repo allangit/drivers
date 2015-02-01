@@ -1,0 +1,46 @@
+8
+
+dir
+49
+http://svn.ie.itcr.ac.cr/svn/BancoFiltros/trunk/filtro_pipelining/integracion_fisica
+http://svn.ie.itcr.ac.cr/svn/BancoFiltros
+
+
+
+2011-03-22T22:57:35.487722Z
+49
+jvalverde
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4b124145-7899-47c2-966c-cb6379507ee9
+
+simulacion_post_synthesis
+dir
+
+rtl_gate_verification
+dir
+
+simulation_post_physical
+dir
+
+back_end
+dir
+
+timing_verification
+dir
+
+front_end
+dir
+

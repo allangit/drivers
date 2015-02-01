@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : resources
+Design : filtro_pipelining
+Version: E-2010.12-SP1
+Date   : Tue Mar 22 16:42:58 2011
+****************************************
+
+Resource Sharing Report for design filtro_pipelining in file
+        ./source/filtro_pipelining.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r88      | DW01_add     | width=20   |               | add_225              |
+| r98      | DW01_add     | width=20   |               | add_233              |
+| r100     | DW01_add     | width=20   |               | add_236              |
+| r199     | DW01_sub     | width=20   |               | sub_1_root_sub_0_root_sub_222_2 |
+| r201     | DW01_sub     | width=20   |               | sub_0_root_sub_0_root_sub_222_2 |
+| r299     | DW01_sub     | width=20   |               | sub_1_root_sub_0_root_sub_227 |
+| r301     | DW01_add     | width=20   |               | add_0_root_sub_0_root_sub_227 |
+| r399     | DW01_sub     | width=20   |               | sub_1_root_sub_0_root_sub_230 |
+| r401     | DW01_add     | width=20   |               | add_0_root_sub_0_root_sub_230 |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_0_root_sub_0_root_sub_222_2       |                    |                |
+|                    | DW01_sub         | rpl                |                |
+| sub_1_root_sub_0_root_sub_222_2       |                    |                |
+|                    | DW01_sub         | rpl                |                |
+| add_0_root_sub_0_root_sub_227         |                    |                |
+|                    | DW01_add         | rpl                |                |
+| add_0_root_sub_0_root_sub_230         |                    |                |
+|                    | DW01_add         | rpl                |                |
+| sub_1_root_sub_0_root_sub_230         |                    |                |
+|                    | DW01_sub         | rpl                |                |
+| add_225            | DW01_add         | rpl                |                |
+| add_233            | DW01_add         | rpl                |                |
+| add_236            | DW01_add         | rpl                |                |
+===============================================================================
+
+
+No multiplexors to report
+1

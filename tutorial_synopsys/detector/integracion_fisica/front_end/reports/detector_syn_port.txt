@@ -1,0 +1,22 @@
+ 
+****************************************
+Report : port
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+
+
+Attributes:
+    d - dont_touch_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+clk            in      0.0000   0.0000   --      --      --         d
+dato           in      0.0000   0.0000    2.19 1664.00   --         
+reset          in      0.0000   0.0000    2.19 1664.00   --         
+detectada      out     0.0000   0.0000   --      --      --         
+
+1

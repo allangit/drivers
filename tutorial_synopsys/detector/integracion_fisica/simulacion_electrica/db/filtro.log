@@ -1,0 +1,368 @@
+ --------------------------------------------------------
+|                                                        |
+|             NanoSim Version E-2010.12-SP1              |
+|                    SN:20110216-linux                   |
+|           Machine Name: localhost.localdomain          |
+| Copyright (c) 2011 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Wed Feb 16 02:10:12 PST 2011
+Wed May 18 15:58:33 CST 2011
+
+Command line options:  -nvlog filtro_phy.v -nvec filtro.vec -nspice supply.spi ./spice/SAED90nm.lib ./spice/SAED90nm.lib~ ./spice/saed90nm.sp ./spice/saed90nm.sp~ -nspef filtro_phy.spef -C cfg_filtro -m filtro_pipelining -o db/filtro -t 70000n -out wdb
+
+
+The 32-bit version of the simulator is running.
+
+
+Initializing system messages took 0.000 s
+
+LICENSE Information: 
+-- Key: NANOSIM		            
+-- Version: 2010.12
+
+Installing interactive/configuration commands ... 
+Installing commands took 0.020 s
+
+
+Start netlist compilation at Wed May 18 15:58:34 2011
+
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 66, column 0, format SPICE: library definition outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 73, column 5, format SPICE: .endl outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 76, column 0, format SPICE: library definition outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 83, column 5, format SPICE: .endl outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 86, column 0, format SPICE: library definition outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 92, column 5, format SPICE: .endl outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 95, column 0, format SPICE: library definition outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 102, column 5, format SPICE: .endl outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 105, column 0, format SPICE: library definition outside library file, ignored
+WARNING:NanoSim:0x20201054:File "./spice/SAED90nm.lib", line 112, column 5, format SPICE: .endl outside library file, ignored
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+Compiling "filtro_phy.v" (VERILOG)
+Compiling "filtro.vec" (VECTOR)
+Compiling "supply.spi" (SPICE)
+Compiling "spice/SAED90nm.lib" (SPICE)
+Compiling "SAED90nm.lib" (SPICE)
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos25" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos25" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos25" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos25" is ignored.
+Compiling "SAED90nm.lib" (SPICE)
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12" is ignored.
+Compiling "SAED90nm.lib" (SPICE)
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12_lvt" is ignored.
+WARNING:NanoSim:0x20201059:duplicate library call "SAED90nm.lib:mos12_lvt" is ignored.
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+Compiling "SAED90nm.lib" (SPICE)
+Compiling "SAED90nm.lib" (SPICE)
+WARNING:NanoSim:0x2020111c:Mixed netlist formats encountered. The following conflicting built-in functions('sign,sqrt,pow,log,log10,db,int') will use the interpretation in the 'SPICE' format. Please use the control option PREFER_SIM_FORMAT=<format> to set for different interpretations.
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rppoly_wos found, using the one in file ./spice/SAED90nm.lib, line 835
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rnpoly_wos found, using the one in file ./spice/SAED90nm.lib, line 846
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rppoly found, using the one in file ./spice/SAED90nm.lib, line 857
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rnpoly found, using the one in file ./spice/SAED90nm.lib, line 868
+Compiling "spice/SAED90nm.lib~" (SPICE)
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rppoly_wos found, using the one in file ./spice/SAED90nm.lib~, line 835
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rnpoly_wos found, using the one in file ./spice/SAED90nm.lib~, line 846
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rppoly found, using the one in file ./spice/SAED90nm.lib~, line 857
+WARNING:NanoSim:0x2020107c:multiple definition for subckt rnpoly found, using the one in file ./spice/SAED90nm.lib~, line 868
+Compiling "spice/saed90nm.sp" (SPICE)
+Compiling "spice/saed90nm.sp~" (SPICE)
+WARNING:NanoSim:0x2020107c:multiple definition for subckt XOR3X2 found, using the one in file ./spice/saed90nm.sp~, line 5
+WARNING:NanoSim:0x2020107c:multiple definition for subckt XOR3X1 found, using the one in file ./spice/saed90nm.sp~, line 30
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       27.000
+
+
+Netlist compilation will be case sensitive.
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "U6" of subckt "XNOR2X1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_2_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_3_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_4_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_5_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_6_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "contador_reg_7_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "U3" of subckt "INVX0".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "add_x_58_1_U1_1_6" of subckt "HADDX1".
+WARNING:NanoSim:0x202040aa:VDD, VSS are unused ports in instance "add_x_58_1_U1_1_5" of subckt "HADDX1".
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+Compiling "filtro_phy.spef" (SPEF)
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_3_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_2_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_1_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_0_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:VDD, VSS are unused ports in instance "secuencia_reloj_prioridad_salida_reg_1_" of subckt "DFFNX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_11_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_10_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_9_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_8_" of subckt "DFFARX1".
+WARNING:NanoSim:0x202080aa:QN, VDD, VSS are unused ports in instance "in_reg_pila_registro_reg_0_registro_tmp_reg_7_" of subckt "DFFARX1".
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+Building instance tree finished in 5 seconds
+
+Finish netlist compilation at Wed May 18 15:58:39 2011
+
+Netlist compilation took 4.750 s
+
+This simulation uses HSPICE models
+
+WARNING:NanoSim:0x21104430:SUSPICIOUS MODEL PARAMETER VALUE: Warning (model 'n12.1'): toxe, toxp, and dtox all given and toxe != toxp + dtox; dtox ignored...
+ 
+WARNING:NanoSim:0x21104430:SUSPICIOUS MODEL PARAMETER VALUE: Warning (model 'p12.1'): toxe, toxp, and dtox all given and toxe != toxp + dtox; dtox ignored...
+ 
+WARNING:NanoSim:0x21104432:MISC MODEL PROBLEM: ** warning** associated with encrypted blocks were suppressed
+
+ 
+***** Warning: 'filtro.vcd' file uses timescale '1.000000ps', which is not bigger than the
+               simulation timestep size of '10.000000ps', this may cause a problem
+               in the simulation, recommend to set "set_sim_tres" to 0.01ns
+Building node/element arrays took 5.170 s
+
+Reading configuration files ...
+set_ckt_ctrl bus_notation:"[:]"
+report_block_powr * *
+report_node_powr GND VDD
+set_print_tres 10ps
+set_print_format shorted_alias=1
+;set_ckt_ctrl cspf_file:"filtro_phy.spef"
+set_ckt_ctrl ba_power_nets:"1"
+;use_sim_case l
+
+print_node_logic filtro_syn_testbench.filtro_pipelining_clk_2x 
+print_node_logic filtro_syn_testbench.reset 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[0] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[1] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[2] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[3] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[4] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[5] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[6] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[7] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[8] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[9] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[10] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[11] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[12] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[13] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[14] 
+print_node_logic filtro_syn_testbench.filtro_pipelining_in[15] 
+print_node_v filtro_syn_testbench.banda0[0] 
+print_node_v filtro_syn_testbench.banda0[1] 
+print_node_v filtro_syn_testbench.banda0[2] 
+print_node_v filtro_syn_testbench.banda0[3] 
+print_node_v filtro_syn_testbench.banda0[4] 
+print_node_v filtro_syn_testbench.banda0[5] 
+print_node_v filtro_syn_testbench.banda0[6] 
+print_node_v filtro_syn_testbench.banda0[7] 
+print_node_v filtro_syn_testbench.banda0[8] 
+print_node_v filtro_syn_testbench.banda0[9] 
+print_node_v filtro_syn_testbench.banda0[10] 
+print_node_v filtro_syn_testbench.banda0[11] 
+print_node_v filtro_syn_testbench.banda0[12] 
+print_node_v filtro_syn_testbench.banda0[13] 
+print_node_v filtro_syn_testbench.banda0[14] 
+print_node_v filtro_syn_testbench.banda0[15] 
+Reading configuration files took 0.000000 s
+
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.reset". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[15]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[14]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[13]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[12]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[11]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[10]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[9]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[8]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x211092cd:Stimulus element "filtro.vec" is connected to the circuit at node "filtro_syn_testbench.filtro_pipelining_in[7]". However, node is not connected to other circuit elements. 
+WARNING:NanoSim:0x20102001:Previous message has been printed 10 times, It will not be printed again! To change the limit for every message type, use:
+	"set_mesg_opt limit_per_mesg=<limit>"
+WARNING:NanoSim:0x2110925a:There are 0 DANGLING nodes and 2 DANGLING STIMULUS SIGNALS. Please view the file db/filtro.dng for the node names 
+
+# of CMOS elements                                        :        48810
+# of resistors                                            :        12800
+# of dc voltage sources                                   :            1
+# of stimulus elements                                    :            1
+# of ba nets in all files                                 :         2666
+     # of ba nets without errors                          :         2666
+# of elements                                             :        61612
+# of used elements                                        :        61611
+# of nodes                                                :        41785
+# of subckt                                               :          348
+# of top-level instances                                  :         4842
+# of capacitors from netlist                              :        15727
+     # of Ground CAPS from netlist                        :        15727
+     # of Coupling CAPS from netlist                      :            0
+
+
+Circuit partitioning ...
+
+Among 2213 stages, there are: 
+        2213 pwl stages 
+           0 grouped pwl stages
+           0 analog stages 
+           0 NR stages 
+           0 grouped analog stages
+           0 rc stages 
+           0 ud stages 
+           0 ADFMI functional model stages
+         239 nodes in the largest pwl stage
+           0 nodes in the largest digital stage
+
+         569 stages (569 pwl/analog stages) with 0-9 nodes
+        1153 stages (1153 pwl/analog stages) with 10-19 nodes
+         451 stages (451 pwl/analog stages) with 20-49 nodes
+          12 stages (12 pwl/analog stages) with 50-99 nodes
+          20 stages (20 pwl/analog stages) with 100-149 nodes
+           8 stages (8 PWL stages) with 200-249 nodes
+
+
+Among 41785 nodes, there are: 
+       41785 pwl nodes
+           0 analog (accurate) nodes
+           0 rc nodes
+           0 ud nodes
+
+           0 cut nodes 
+           0 mem_cut nodes 
+           0 no_clamp nodes 
+       41637 nodes in stages
+           2 voltage source nodes
+           2 constant nodes
+           0 NR nodes
+
+Among 61612 elements, there are: 
+       61610 elements in stages
+       61610 pwl elements 
+           0 synchronous elements 
+           0 SMS elements 
+           0 analog (accurate) elements
+           0 rc elements 
+           0 ud elements 
+           0 ADFMI functional model elements 
+           0 VERILOGA model elements 
+           0 behavioral model elements 
+
+           0 mna elements
+           0 NR elements
+           0 mos transistors identified as keepers
+       38414 mos transistors need Subthreshold current
+           0 keepers removed
+           0 keepers reduced
+
+
+Circuit partitioning took 0.160 s
+Format wdb is selected. Custom output library will be searched and dynamically linked. 
+Constructing matrix ...
+Matrix ordering and construction took 0.060 s
+Profiling block-number for individual report_block_powr configuration commands (1 cmd's totally)  
+Cmd 1: 1 blocks from "report_block_powr * * "   
+Processing block power (number of blocks: 1) ...  
+
+
+After reading configuration file(s), 40 signals are identified to be printed:
+          18 logic signals
+          16 voltage signals
+           6 node current signals, including:
+                 2 node inst. current signals
+                 2 node RMS current signals
+                 2 node AVG current signals
+
+Statistics of memory used for signal printing:
+      564416 bytes allocated in total, including:
+             56008 bytes allocated for node current/voltage/logic signals
+               248 bytes allocated additionally for current printing
+            164008 bytes allocated additionally for node current signals
+            344152 bytes allocated additionally for element branch current signals
+
+Levelizing stages ...
+Levelizing stages took 0.010 s
+DC initialization ...
+
+Finishing initialization (level 0 -- 78)
+0 dynamic stages assigned in DC Initialization
+
+Number of residual dc events scheduled          : 0
+Number of ic nodes scheduled                    : 0
+DC initialization took 0.050 s
+
+Simulation begins in pwl mode ...
+Simulation ends at 70000.000 ns
+
+Simulation took 0.010 s
+
+Current information calculated over the intervals:
+
+     0.00000e+00 -  7.00000e+04 ns
+
+Node: GND
+    Average current	:  0.00000e+00 uA
+    RMS current		:  0.00000e+00 uA
+
+    No current peaks noted.
+
+Node: VDD
+    Average current	:  0.00000e+00 uA
+    RMS current		:  0.00000e+00 uA
+
+    No current peaks noted.
+
+
+Block: *
+    Number of nodes in block		:  41637
+    Number of elements in block		:  61610
+    Number of block supply nodes	:  0
+    Number of block ground nodes	:  0
+    Number of block biput nodes		:  0
+    Number of block input nodes		:  0
+    Number of block output nodes	:  0
+    Number of block stages		:  2213
+    Number of block partial stages	:  0
+
+    Average supply current		:  0.000000 uA
+    RMS supply current			:  0.000000 uA
+
+    Average input current		:  0.000000 uA
+    RMS input current			:  0.000000 uA
+
+    Average output current		:  0.000000 uA
+    RMS output current			:  0.000000 uA
+
+    Average biput current		:  0.000000 uA
+    RMS biput current			:  0.000000 uA
+
+Simulation time resolution                      : 1.000e-02 ns
+Print time resolution                           : 1.000e-02 ns
+Number of PWL matrix solutions                  : 0
+Number of PWL MOS model lookups                 : 50428
+Number of time steps                            : 0
+Number of iterations                            : 0
+Number of rejected time steps                   : 0
+
+Global simulation parameters used:
+
+SPD            0.12V     ASPD           0.06V
+SIM_DESV       0.12V     SIM_AESV       0.06V
+VDS_MIN  5.58762e-05V     AVDS_MIN      1e-08V
+SSC (steady state current)         0.1uA
+SUBI (subthreshold current)          1uA
+DC CURRENT                           1uA
+
+	      11.0 real	      10.4 user	       0.2 sys
+
+Signal data is saved in db/filtro.wdb
+
+No errors reported in the .err file (db/filtro.err)
+

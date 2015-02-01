@@ -1,0 +1,668 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : filtro_pipelining
+Version: E-2010.12-ICC-SP1
+Date   : Wed Mar 16 16:19:00 2011
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: secuencia/multi_reloj/contador_reg_0_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_0_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_0_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_0_/Q (DFFSR)         0.67       0.67 r
+  secuencia/multi_reloj/add_46/A[0] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.67 r
+  secuencia/multi_reloj/add_46/U1/Y (INVX2)               0.08       0.75 f
+  secuencia/multi_reloj/add_46/SUM[0] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.75 f
+  secuencia/multi_reloj/contador_reg_0_/D (DFFSR)         0.00       0.75 f
+  data arrival time                                                  0.75
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_0_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.08       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.66
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_7_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_7_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_7_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_7_/Q (DFFSR)         0.56       0.56 r
+  secuencia/multi_reloj/add_46/A[7] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.56 r
+  secuencia/multi_reloj/add_46/U2/Y (XOR2X1)              0.20       0.76 f
+  secuencia/multi_reloj/add_46/SUM[7] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.76 f
+  secuencia/multi_reloj/contador_reg_7_/D (DFFSR)         0.00       0.76 f
+  data arrival time                                                  0.76
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_7_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.76
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.67
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_1_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_1_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_1_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_1_/Q (DFFSR)         0.56       0.56 r
+  secuencia/multi_reloj/add_46/A[1] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.56 r
+  secuencia/multi_reloj/add_46/U1_1_1/YS (HAX1)           0.29       0.86 f
+  secuencia/multi_reloj/add_46/SUM[1] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.86 f
+  secuencia/multi_reloj/contador_reg_1_/D (DFFSR)         0.00       0.86 f
+  data arrival time                                                  0.86
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_1_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.86
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.76
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_6_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_6_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_6_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_6_/Q (DFFSR)         0.58       0.58 r
+  secuencia/multi_reloj/add_46/A[6] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.58 r
+  secuencia/multi_reloj/add_46/U1_1_6/YS (HAX1)           0.29       0.88 f
+  secuencia/multi_reloj/add_46/SUM[6] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.88 f
+  secuencia/multi_reloj/contador_reg_6_/D (DFFSR)         0.00       0.88 f
+  data arrival time                                                  0.88
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_6_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.78
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_3_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_3_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_3_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_3_/Q (DFFSR)         0.59       0.59 r
+  secuencia/multi_reloj/add_46/A[3] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.59 r
+  secuencia/multi_reloj/add_46/U1_1_3/YS (HAX1)           0.29       0.88 f
+  secuencia/multi_reloj/add_46/SUM[3] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.88 f
+  secuencia/multi_reloj/contador_reg_3_/D (DFFSR)         0.00       0.88 f
+  data arrival time                                                  0.88
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_3_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.79
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_5_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_5_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_5_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_5_/Q (DFFSR)         0.59       0.59 r
+  secuencia/multi_reloj/add_46/A[5] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.59 r
+  secuencia/multi_reloj/add_46/U1_1_5/YS (HAX1)           0.29       0.88 f
+  secuencia/multi_reloj/add_46/SUM[5] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.88 f
+  secuencia/multi_reloj/contador_reg_5_/D (DFFSR)         0.00       0.88 f
+  data arrival time                                                  0.88
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_5_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.79
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_4_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_4_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_4_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_4_/Q (DFFSR)         0.62       0.62 r
+  secuencia/multi_reloj/add_46/A[4] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.62 r
+  secuencia/multi_reloj/add_46/U1_1_4/YS (HAX1)           0.29       0.92 f
+  secuencia/multi_reloj/add_46/SUM[4] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.92 f
+  secuencia/multi_reloj/contador_reg_4_/D (DFFSR)         0.00       0.92 f
+  data arrival time                                                  0.92
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_4_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.92
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.83
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_2_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/multi_reloj/contador_reg_2_
+            (rising edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_2_/CLK (DFFSR)       0.00       0.00 r
+  secuencia/multi_reloj/contador_reg_2_/Q (DFFSR)         0.64       0.64 r
+  secuencia/multi_reloj/add_46/A[2] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.64 r
+  secuencia/multi_reloj/add_46/U1_1_2/YS (HAX1)           0.30       0.94 f
+  secuencia/multi_reloj/add_46/SUM[2] (multi_reloj_N_filtros8_DW01_inc_0)
+                                                          0.00       0.94 f
+  secuencia/multi_reloj/contador_reg_2_/D (DFFSR)         0.00       0.94 f
+  data arrival time                                                  0.94
+
+  clock design_clk (rise edge)                            0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  secuencia/multi_reloj/contador_reg_2_/CLK (DFFSR)       0.00       0.00 r
+  library hold time                                       0.09       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.94
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.84
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_2_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/reloj_prioridad_salida_reg_2_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_2_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_2_/Q (DFFSR)         0.64   22676.64 r
+  secuencia/multi_reloj/reloj_salida[2] (multi_reloj_N_filtros8)
+                                                          0.00   22676.64 r
+  secuencia/codificador_prioridad/codificador_prioridad_entrada[2] (codificador_prioridad_orden3)
+                                                          0.00   22676.64 r
+  secuencia/codificador_prioridad/U11/Y (NAND2X1)         0.06   22676.70 f
+  secuencia/codificador_prioridad/U10/Y (NOR2X1)          0.08   22676.78 r
+  secuencia/codificador_prioridad/codificador_prioridad_salida[2] (codificador_prioridad_orden3)
+                                                          0.00   22676.78 r
+  secuencia/reloj_prioridad_salida_reg_2_/D (DFFNEGX1)
+                                                          0.00   22676.78 r
+  data arrival time                                              22676.78
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  secuencia/reloj_prioridad_salida_reg_2_/CLK (DFFNEGX1)
+                                                          0.00   11338.00 f
+  library hold time                                      -0.07   11337.93
+  data required time                                             11337.93
+  --------------------------------------------------------------------------
+  data required time                                             11337.93
+  data arrival time                                              -22676.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11338.84
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_0_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/reloj_prioridad_salida_reg_0_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_0_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_0_/Q (DFFSR)         0.67   22676.67 r
+  secuencia/multi_reloj/reloj_salida[0] (multi_reloj_N_filtros8)
+                                                          0.00   22676.67 r
+  secuencia/codificador_prioridad/codificador_prioridad_entrada[0] (codificador_prioridad_orden3)
+                                                          0.00   22676.67 r
+  secuencia/codificador_prioridad/U5/Y (INVX2)            0.10   22676.76 f
+  secuencia/codificador_prioridad/U14/Y (AOI21X1)         0.09   22676.85 r
+  secuencia/codificador_prioridad/codificador_prioridad_salida[0] (codificador_prioridad_orden3)
+                                                          0.00   22676.85 r
+  secuencia/reloj_prioridad_salida_reg_0_/D (DFFNEGX1)
+                                                          0.00   22676.85 r
+  data arrival time                                              22676.85
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  secuencia/reloj_prioridad_salida_reg_0_/CLK (DFFNEGX1)
+                                                          0.00   11338.00 f
+  library hold time                                      -0.07   11337.93
+  data required time                                             11337.93
+  --------------------------------------------------------------------------
+  data required time                                             11337.93
+  data arrival time                                              -22676.85
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11338.92
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_1_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: secuencia/reloj_prioridad_salida_reg_1_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_1_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_1_/Q (DFFSR)         0.56   22676.56 r
+  secuencia/multi_reloj/reloj_salida[1] (multi_reloj_N_filtros8)
+                                                          0.00   22676.56 r
+  secuencia/codificador_prioridad/codificador_prioridad_entrada[1] (codificador_prioridad_orden3)
+                                                          0.00   22676.56 r
+  secuencia/codificador_prioridad/U3/Y (AND2X2)           0.21   22676.78 r
+  secuencia/codificador_prioridad/U12/Y (OAI21X1)         0.10   22676.88 f
+  secuencia/codificador_prioridad/U8/Y (INVX2)            0.06   22676.94 r
+  secuencia/codificador_prioridad/codificador_prioridad_salida[1] (codificador_prioridad_orden3)
+                                                          0.00   22676.94 r
+  secuencia/reloj_prioridad_salida_reg_1_/D (DFFNEGX1)
+                                                          0.00   22676.94 r
+  data arrival time                                              22676.94
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  secuencia/reloj_prioridad_salida_reg_1_/CLK (DFFNEGX1)
+                                                          0.00   11338.00 f
+  library hold time                                      -0.07   11337.93
+  data required time                                             11337.93
+  --------------------------------------------------------------------------
+  data required time                                             11337.93
+  data arrival time                                              -22676.94
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.01
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_7_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_7_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_7_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_7_/Q (DFFSR)         0.55   22676.55 r
+  secuencia/multi_reloj/reloj_salida[7] (multi_reloj_N_filtros8)
+                                                          0.00   22676.55 r
+  secuencia/reloj_prioridad_relojes[7] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.55 r
+  U21/Y (INVX2)                                           0.13   22676.69 f
+  U20/Y (INVX4)                                           0.86   22677.54 r
+  reloj_secuencia_delay_reg_7_/D (DFFNEGX1)               0.00   22677.54 r
+  data arrival time                                              22677.54
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_7_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.69
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_1_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_1_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_1_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_1_/Q (DFFSR)         0.56   22676.56 r
+  secuencia/multi_reloj/reloj_salida[1] (multi_reloj_N_filtros8)
+                                                          0.00   22676.56 r
+  secuencia/reloj_prioridad_relojes[1] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.56 r
+  U15/Y (INVX2)                                           0.13   22676.70 f
+  U14/Y (INVX4)                                           0.86   22677.56 r
+  reloj_secuencia_delay_reg_1_/D (DFFNEGX1)               0.00   22677.56 r
+  data arrival time                                              22677.56
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_1_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.56
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.71
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_6_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_6_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_6_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_6_/Q (DFFSR)         0.58   22676.58 r
+  secuencia/multi_reloj/reloj_salida[6] (multi_reloj_N_filtros8)
+                                                          0.00   22676.58 r
+  secuencia/reloj_prioridad_relojes[6] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.58 r
+  U19/Y (INVX2)                                           0.14   22676.72 f
+  U18/Y (INVX4)                                           0.86   22677.58 r
+  reloj_secuencia_delay_reg_6_/D (DFFNEGX1)               0.00   22677.58 r
+  data arrival time                                              22677.58
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_6_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.58
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.73
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_3_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_3_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_3_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_3_/Q (DFFSR)         0.59   22676.59 r
+  secuencia/multi_reloj/reloj_salida[3] (multi_reloj_N_filtros8)
+                                                          0.00   22676.59 r
+  secuencia/reloj_prioridad_relojes[3] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.59 r
+  U9/Y (INVX2)                                            0.14   22676.72 f
+  U8/Y (INVX4)                                            0.86   22677.58 r
+  reloj_secuencia_delay_reg_3_/D (DFFNEGX1)               0.00   22677.58 r
+  data arrival time                                              22677.58
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_3_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.58
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.73
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_5_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_5_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_5_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_5_/Q (DFFSR)         0.59   22676.59 r
+  secuencia/multi_reloj/reloj_salida[5] (multi_reloj_N_filtros8)
+                                                          0.00   22676.59 r
+  secuencia/reloj_prioridad_relojes[5] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.59 r
+  U13/Y (INVX2)                                           0.14   22676.72 f
+  U12/Y (INVX4)                                           0.86   22677.58 r
+  reloj_secuencia_delay_reg_5_/D (DFFNEGX1)               0.00   22677.58 r
+  data arrival time                                              22677.58
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_5_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.58
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.73
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_4_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_4_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_4_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_4_/Q (DFFSR)         0.62   22676.62 r
+  secuencia/multi_reloj/reloj_salida[4] (multi_reloj_N_filtros8)
+                                                          0.00   22676.62 r
+  secuencia/reloj_prioridad_relojes[4] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.62 r
+  U11/Y (INVX2)                                           0.14   22676.77 f
+  U10/Y (INVX4)                                           0.86   22677.63 r
+  reloj_secuencia_delay_reg_4_/D (DFFNEGX1)               0.00   22677.63 r
+  data arrival time                                              22677.63
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_4_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.78
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_2_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_2_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_2_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_2_/Q (DFFSR)         0.64   22676.64 r
+  secuencia/multi_reloj/reloj_salida[2] (multi_reloj_N_filtros8)
+                                                          0.00   22676.64 r
+  secuencia/reloj_prioridad_relojes[2] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.64 r
+  U17/Y (INVX2)                                           0.15   22676.79 f
+  U16/Y (INVX4)                                           0.87   22677.66 r
+  reloj_secuencia_delay_reg_2_/D (DFFNEGX1)               0.00   22677.66 r
+  data arrival time                                              22677.66
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_2_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.80
+
+
+  Startpoint: secuencia/multi_reloj/contador_reg_0_
+              (rising edge-triggered flip-flop clocked by design_clk)
+  Endpoint: reloj_secuencia_delay_reg_0_
+            (falling edge-triggered flip-flop clocked by design_clk)
+  Path Group: design_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock design_clk (rise edge)                        22676.00   22676.00
+  clock network delay (ideal)                             0.00   22676.00
+  secuencia/multi_reloj/contador_reg_0_/CLK (DFFSR)       0.00   22676.00 r
+  secuencia/multi_reloj/contador_reg_0_/Q (DFFSR)         0.67   22676.67 r
+  secuencia/multi_reloj/reloj_salida[0] (multi_reloj_N_filtros8)
+                                                          0.00   22676.67 r
+  secuencia/reloj_prioridad_relojes[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   22676.67 r
+  U7/Y (INVX2)                                            0.15   22676.82 f
+  U6/Y (INVX4)                                            0.87   22677.69 r
+  reloj_secuencia_delay_reg_0_/D (DFFNEGX1)               0.00   22677.69 r
+  data arrival time                                              22677.69
+
+  clock design_clk (fall edge)                        11338.00   11338.00
+  clock network delay (ideal)                             0.00   11338.00
+  reloj_secuencia_delay_reg_0_/CLK (DFFNEGX1)             0.00   11338.00 f
+  library hold time                                      -0.15   11337.85
+  data required time                                             11337.85
+  --------------------------------------------------------------------------
+  data required time                                             11337.85
+  data arrival time                                              -22677.69
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11339.83
+
+
+1

@@ -1,0 +1,29 @@
+ 
+****************************************
+Report : cell
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U7                        AOI21X1         saed90nm_typ    11.980800 
+U8                        AO221X1         saed90nm_typ    12.902400 
+U9                        NAND2X0         saed90nm_typ    5.529600  
+U10                       AND3X1          saed90nm_typ    8.294400  
+U11                       MUX21X1         saed90nm_typ    11.059200 
+U12                       INVX0           saed90nm_typ    5.529600  
+divisor_frecuencia        divisor_frecuencia              30.412800 h, n
+secuenciaFSM_state_reg_0_ DFFARX1         saed90nm_typ    32.256001 n
+secuenciaFSM_state_reg_1_ DFFASX1         saed90nm_typ    31.334400 n
+--------------------------------------------------------------------------------
+Total 9 cells                                             149.299201
+1

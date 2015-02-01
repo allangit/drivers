@@ -1,0 +1,78 @@
+ 
+****************************************
+Report : qor
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.13
+  Critical Path Slack:          15.79
+  Critical Path Clk Period:     20.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -1.70
+  Total Hold Violation:         -1.70
+  No. of Hold Violations:        1.00
+  -----------------------------------
+
+  Timing Path Group 'divisor_frecuencia/clk_2'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.12
+  Critical Path Slack:          11.88
+  Critical Path Clk Period:     40.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          1
+  Hierarchical Port Count:          3
+  Leaf Cell Count:                 10
+  Buf/Inv Cell Count:               1
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:         7
+  Sequential Cell Count:            3
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:       60.825601
+  Noncombinational Area:    88.473600
+  Net Area:                  2.674399
+  -----------------------------------
+  Cell Area:               149.299201
+  Design Area:             151.973600
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:            13
+  Nets With Violations:             0
+  -----------------------------------
+
+
+  Hostname: zener.ie.itcr.ac.cr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.02
+  Logic Optimization:                  0.07
+  Mapping Optimization:                1.24
+  -----------------------------------------
+  Overall Compile Time:                3.97
+  Overall Compile Wall Clock Time:     5.74
+
+1

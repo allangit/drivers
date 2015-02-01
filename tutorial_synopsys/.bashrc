@@ -1,0 +1,46 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+SNPSLMD_LICENSE_FILE=2700@172.21.16.16
+export SNPSLMD_LICENSE_FILE 
+SYNOPSYS_HOME=/usr/local/synopsys/app
+export SYNOPSYS_HOME
+VCS_HOME=/usr/local/synopsys/app/vcs_mx
+export VCS_HOME
+PATH=$PATH:$SYNOPSYS_HOME/dc/bin:$SYNOPSYS_HOME/hspice/bin:$SYNOPSYS_HOME/ic-compiler/bin:$SYNOPSYS_HOME/formality/bin:$SYNOPSYS_HOME/primetime/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/vcs_mx/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/starrc/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/custom_designer/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/hsim/hsimplus/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/nanosim/bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/cosmoscope/ai_bin
+export PATH
+PATH=$PATH:$SYNOPSYS_HOME/hercules/bin/amd64
+export PATH
+
+SYNOPSYS=/usr/local/synopsys/
+export SYNOPSYS
+
+PATH=$PATH:/datos/mentor/mgc/ams_2008_2a/questasim/v6.4c/bin
+export PATH
+
+
+
+
+########### Variables para Synopsys Installer #########################
+
+         PATH=/datos/Instaladores/Synopsys/installer2.4:$PATH
+         export PATH
+
+ LM_LICENSE_FILE=2100@172.21.16.253

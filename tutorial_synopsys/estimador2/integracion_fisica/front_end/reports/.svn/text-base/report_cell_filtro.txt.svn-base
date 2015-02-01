@@ -1,0 +1,181 @@
+ 
+****************************************
+Report : cell
+Design : filtro_pipelining
+Version: E-2010.12-SP1
+Date   : Tue Mar 22 16:42:58 2011
+****************************************
+
+Attributes:
+   BO - reference allows boundary optimization
+    b - black box (unknown)
+    h - hierarchical
+   mo - map_only
+    n - noncombinational
+    p - parameterized
+    r - removable
+   so - sizing only
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U6                        INVX2           osu05_stdcells  144.000000
+U7                        BUFX2           osu05_stdcells  216.000000
+U9                        INVX1           osu05_stdcells  144.000000
+U10                       INVX1           osu05_stdcells  144.000000
+U11                       INVX1           osu05_stdcells  144.000000
+U12                       INVX1           osu05_stdcells  144.000000
+U13                       INVX1           osu05_stdcells  144.000000
+U14                       INVX1           osu05_stdcells  144.000000
+U15                       INVX1           osu05_stdcells  144.000000
+U16                       INVX1           osu05_stdcells  144.000000
+U17                       INVX1           osu05_stdcells  144.000000
+U18                       INVX1           osu05_stdcells  144.000000
+U19                       INVX1           osu05_stdcells  144.000000
+U20                       XNOR2X1         osu05_stdcells  504.000000
+U21                       OR2X2           osu05_stdcells  288.000000
+add_0_root_sub_0_root_sub_227
+                          filtro_pipelining_DW01_add_3    20232.000000
+                                                                    BO, h
+add_0_root_sub_0_root_sub_230
+                          filtro_pipelining_DW01_add_4    20232.000000
+                                                                    BO, h
+add_225                   filtro_pipelining_DW01_add_2    21312.000000
+                                                                    BO, h
+add_233                   filtro_pipelining_DW01_add_1    21735.000000
+                                                                    BO, h
+add_236                   filtro_pipelining_DW01_add_0    19215.000000
+                                                                    BO, h
+alto_reg                  pila_reg_join_free_n_registros8_0
+                                                          244512.000000
+                                                                    h, n, p
+bajo_reg                  pila_reg_join_free_n_registros8_1
+                                                          246240.000000
+                                                                    h, n, p
+coeficiente_a11_H         coeficiente_a11_n_bits19_1      23256.000000
+                                                                    h, p
+coeficiente_a11_L         coeficiente_a11_n_bits19_0      23256.000000
+                                                                    h, p
+coeficiente_a12           coeficiente_a12_n_bits19        22536.000000
+                                                                    h, p
+coeficiente_a22           coeficiente_a22_n_bits19        85824.000000
+                                                                    h, p
+coeficiente_b11_H         coeficiente_b11_H_n_bits19      16632.000000
+                                                                    h, p
+coeficiente_b11_L         coeficiente_b11_L_n_bits19      0.000000  h, p
+coeficiente_b12_H         coeficiente_b12_H_n_bits19      134784.000000
+                                                                    h, p
+coeficiente_b12_L         coeficiente_b12_L_n_bits19      83952.000000
+                                                                    h, p
+ganancia_alto             ganancia_alto_n_bits19          71928.000000
+                                                                    h, p
+ganancia_bajo             ganancia_bajo_n_bits19          53928.000000
+                                                                    h, p
+in_reg                    pila_reg_free_mux_n_registros8_orden_mux3
+                                                          288828.000000
+                                                                    h, n, p
+pos_H_reg                 pila_reg_join_mux_n_registros8_orden_mux3_1
+                                                          289476.000000
+                                                                    h, n, p
+pos_L_reg                 pila_reg_join_mux_n_registros8_orden_mux3_2
+                                                          289692.000000
+                                                                    h, n, p
+reloj_secuencia_delay_reg[0]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[1]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[2]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[3]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[4]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[5]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[6]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+reloj_secuencia_delay_reg[7]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+secuencia                 reloj_prioridad_orden3_N_filtros8
+                                                          5292.000000
+                                                                    h, n, p
+sos1_reg                  pila_reg_join_mux_n_registros8_orden_mux3_3
+                                                          293004.000000
+                                                                    h, n, p
+sos2_reg                  pila_reg_join_mux_n_registros8_orden_mux3_0
+                                                          293652.000000
+                                                                    h, n, p
+sub_0_root_sub_0_root_sub_222_2
+                          filtro_pipelining_DW01_sub_0    23184.000000
+                                                                    BO, h
+sub_1_root_sub_0_root_sub_222_2
+                          filtro_pipelining_DW01_sub_1    24048.000000
+                                                                    BO, h
+sub_1_root_sub_0_root_sub_227/U2_1
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_2
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_3
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_4
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_5
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_6
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_7
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_8
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_9
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_10
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_11
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_12
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_13
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_14
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_15
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_16
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_17
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_227/U2_18
+                          FAX1            osu05_stdcells  1080.000000
+                                                                    mo, r
+sub_1_root_sub_0_root_sub_230
+                          filtro_pipelining_DW01_sub_3    21960.000000
+                                                                    BO, h
+--------------------------------------------------------------------------------
+Total 67 cells                                            2667798.000000
+1

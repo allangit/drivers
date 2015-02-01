@@ -1,0 +1,5 @@
+*
+*epic tech="voltage 1.2"
+.global VDD GND 
+v1 VDD GND 1.2
+.temp 27 

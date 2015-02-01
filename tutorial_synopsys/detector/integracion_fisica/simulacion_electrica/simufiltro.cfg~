@@ -1,0 +1,41 @@
+;This is a GUI generated file.
+;It is overwritten and updated for each run.
+
+
+report_ckt_dcpath
+report_node_powr gnd vdd
+set_print_format for=wdb
+print_node_logic filtro_extracted_test.filtro_pipelining_clk_2x 
+print_node_logic filtro_extracted_test.reset 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[0] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[1] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[2] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[3] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[4] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[5] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[6] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[7] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[8] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[9] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[10] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[11] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[12] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[13] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[14] 
+print_node_logic filtro_extracted_test.filtro_pipelining_in[15] 
+print_node_v filtro_extracted_test.banda0[0] 
+print_node_v filtro_extracted_test.banda0[1] 
+print_node_v filtro_extracted_test.banda0[2] 
+print_node_v filtro_extracted_test.banda0[3] 
+print_node_v filtro_extracted_test.banda0[4] 
+print_node_v filtro_extracted_test.banda0[5] 
+print_node_v filtro_extracted_test.banda0[6] 
+print_node_v filtro_extracted_test.banda0[7] 
+print_node_v filtro_extracted_test.banda0[8] 
+print_node_v filtro_extracted_test.banda0[9] 
+print_node_v filtro_extracted_test.banda0[10] 
+print_node_v filtro_extracted_test.banda0[11] 
+print_node_v filtro_extracted_test.banda0[12] 
+print_node_v filtro_extracted_test.banda0[13] 
+print_node_v filtro_extracted_test.banda0[14] 
+print_node_v filtro_extracted_test.banda0[15] 

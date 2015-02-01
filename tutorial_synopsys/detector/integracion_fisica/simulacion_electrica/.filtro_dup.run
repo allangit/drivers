@@ -1,0 +1,2 @@
+cd /home/jvalverde/filtro_pipelining/integracion_fisica/simulation_electrical
+vcs  -o gui_simv1 ./filtro_extracted.v -y /home/jvalverde/filtro_pipelining/integracion_fisica/simulation_electrical/ -v ./saed90nm.v +ad=./filtro1.ptn

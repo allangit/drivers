@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports
+END
+report_timing_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_timing_filtro.txt
+END
+report_area_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_area_filtro.txt
+END
+report_resources_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_resources_filtro.txt
+END
+report_power_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_power_filtro.txt
+END
+report_cell_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_cell_filtro.txt
+END
+report_qor_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_qor_filtro.txt
+END
+report_clk_gating_filtro.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/BancoFiltros/!svn/ver/49/trunk/filtro_pipelining/integracion_fisica/front_end/reports/report_clk_gating_filtro.txt
+END

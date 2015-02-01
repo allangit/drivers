@@ -1,0 +1,41 @@
+Loading db file '/home/jvalverde/synopsys/filtro_pipelining/integracion_fisica/front_end/libs/osu05_stdcells.db'
+Information: Updating design information... (UID-85)
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : filtro_pipelining
+Version: E-2010.12-SP1
+Date   : Tue Mar 22 16:42:58 2011
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/jvalverde/synopsys/filtro_pipelining/integracion_fisica/front_end/libs/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  45.9828 uW   (65%)
+  Net Switching Power  =  24.8656 uW   (35%)
+                         ---------
+Total Dynamic Power    =  70.8483 uW  (100%)
+
+Cell Leakage Power     = 877.1453 nW
+
+1

@@ -1,0 +1,1480 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : filtro_pipelining
+Version: E-2010.12-SP1
+Date   : Tue Mar 22 16:42:58 2011
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: filtro_pipelining_clk_banda[5]
+              (clock source 'filtro_pipelining_clk_banda[5]')
+  Endpoint: secuencia/reloj_prioridad_salida_reg[0]
+            (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Path Group: filtro_pipelining_clk_2x
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_banda[5] (rise edge)    21768718.00
+                                                                 21768718.00
+  clock source latency                                    3.00   21768720.00 r
+  filtro_pipelining_clk_banda[5] (in)                     0.00   21768720.00 r
+  secuencia/filtro_pipelining_clk_banda[5] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   21768720.00 r
+  secuencia/codificador_prioridad/codificador_prioridad_entrada[5] (codificador_prioridad_orden3)
+                                                          0.00   21768720.00 r
+  secuencia/codificador_prioridad/U16/Y (INVX1)           0.00   21768720.00 f
+  secuencia/codificador_prioridad/U15/Y (OAI21X1)         0.00   21768720.00 r
+  secuencia/codificador_prioridad/U14/Y (INVX1)           0.00   21768720.00 f
+  secuencia/codificador_prioridad/U12/Y (OAI21X1)         0.00   21768720.00 r
+  secuencia/codificador_prioridad/U9/Y (AOI21X1)          0.00   21768720.00 f
+  secuencia/codificador_prioridad/codificador_prioridad_salida[0] (codificador_prioridad_orden3)
+                                                          0.00   21768720.00 f
+  secuencia/reloj_prioridad_salida_reg[0]/D (DFFNEGX1)
+                                                          0.00   21768720.00 f
+  data arrival time                                              21768720.00
+
+  clock filtro_pipelining_clk_2x (fall edge)          21780048.00
+                                                                 21780048.00
+  clock network delay (ideal)                             4.00   21780052.00
+  clock uncertainty                                      -0.50   21780052.00
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   21780052.00 f
+  library setup time                                     -0.38   21780052.00
+  data required time                                             21780052.00
+  --------------------------------------------------------------------------
+  data required time                                             21780052.00
+  data arrival time                                              -21768720.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11332.00
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_0/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[0])
+  Path Group: filtro_pipelining_clk_banda[0]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          34013.61   34013.61
+  clock network delay (ideal)                             4.00   34017.61
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   34017.61 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.47   34018.08 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   34018.08 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   34018.08 r
+  sos2_reg/U20/Y (BUFX2)                                  0.30   34018.38 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   34018.38 r
+  sos2_reg/mux/U129/Y (INVX1)                             0.30   34018.68 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.26   34018.94 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.80   34019.74 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.23   34019.97 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.15   34020.12 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.38   34020.50 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   34020.50 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   34020.50 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   34020.50 f
+  coeficiente_a22/U5/Y (INVX1)                            0.31   34020.81 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.36   34021.17 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.61   34021.78 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   34021.78 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.46   34022.24 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          0.46   34022.70 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.45   34023.15 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.46   34023.61 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.46   34024.07 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.46   34024.52 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          0.45   34024.98 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.46   34025.43 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.46   34025.89 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.46   34026.35 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          0.46   34026.80 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.46   34027.26 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.46   34027.72 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.46   34028.18 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          0.46   34028.64 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.46   34029.10 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.63   34029.73 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   34029.73 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   34029.73 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.46   34030.19 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.41   34030.60 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   34030.60 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   34030.60 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   34030.60 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           0.54   34031.14 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.68   34031.81 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   34031.81 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   34031.81 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.92   34032.73 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   34032.73 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   34032.73 f
+  add_225/U1_18/YS (FAX1)                                 0.91   34033.64 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   34033.64 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   34033.64 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.66   34034.30 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   34034.30 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   34034.30 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           0.93   34035.22 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   34035.22 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   34035.22 f
+  add_236/U1_18/YS (FAX1)                                 0.98   34036.21 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   34036.21 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   34036.21 f
+  ganancia_alto/U3/Y (INVX2)                              1.04   34037.25 r
+  ganancia_alto/U4/Y (INVX2)                              0.72   34037.97 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.54   34038.50 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          0.42   34038.92 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   34038.92 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.29   34039.21 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.48   34039.68 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.45   34040.14 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.46   34040.59 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          0.45   34041.05 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.46   34041.50 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.46   34041.96 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.45   34042.41 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          0.46   34042.87 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.46   34043.33 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.46   34043.79 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.45   34044.24 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          0.46   34044.70 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.65   34045.34 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   34045.34 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   34045.34 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   34045.34 f
+  alto_reg/pila_registro/pila_registro_entrada[0][18] (pila_registro_n_registros8_4)
+                                                          0.00   34045.34 f
+  alto_reg/pila_registro/reg_0/registro_entrada[18] (registro_n_bits19_25)
+                                                          0.00   34045.34 f
+  alto_reg/pila_registro/reg_0/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   34045.34 f
+  data arrival time                                              34045.34
+
+  clock filtro_pipelining_clk_banda[0] (rise edge)    45351.48   45351.48
+  clock network delay (ideal)                             4.00   45355.48
+  clock uncertainty                                      -0.50   45354.98
+  alto_reg/pila_registro/reg_0/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   45354.98 r
+  library setup time                                     -0.19   45354.79
+  data required time                                             45354.79
+  --------------------------------------------------------------------------
+  data required time                                             45354.79
+  data arrival time                                              -34045.34
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11309.44
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_1/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[1])
+  Path Group: filtro_pipelining_clk_banda[1]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          79365.09   79365.09
+  clock network delay (ideal)                             4.00   79369.09
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   79369.09 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.47   79369.55 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   79369.55 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   79369.55 r
+  sos2_reg/U20/Y (BUFX2)                                  0.30   79369.86 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   79369.86 r
+  sos2_reg/mux/U129/Y (INVX1)                             0.30   79370.16 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.26   79370.41 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.80   79371.22 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.23   79371.45 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.14   79371.59 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.38   79371.98 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   79371.98 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   79371.98 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   79371.98 f
+  coeficiente_a22/U5/Y (INVX1)                            0.31   79372.29 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.35   79372.64 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.62   79373.26 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   79373.26 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.46   79373.72 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          0.45   79374.17 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.46   79374.63 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.45   79375.09 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.45   79375.54 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.46   79376.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          0.45   79376.45 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.46   79376.91 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.45   79377.37 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.46   79377.83 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          0.45   79378.28 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.46   79378.74 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.45   79379.20 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.46   79379.66 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          0.45   79380.11 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.46   79380.57 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.64   79381.21 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   79381.21 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   79381.21 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.46   79381.67 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.41   79382.08 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   79382.08 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   79382.08 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   79382.08 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           0.53   79382.61 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.68   79383.29 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   79383.29 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   79383.29 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.92   79384.21 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   79384.21 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   79384.21 f
+  add_225/U1_18/YS (FAX1)                                 0.91   79385.12 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   79385.12 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   79385.12 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.66   79385.77 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   79385.77 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   79385.77 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           0.92   79386.70 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   79386.70 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   79386.70 f
+  add_236/U1_18/YS (FAX1)                                 0.98   79387.68 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   79387.68 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   79387.68 f
+  ganancia_alto/U3/Y (INVX2)                              1.05   79388.73 r
+  ganancia_alto/U4/Y (INVX2)                              0.72   79389.45 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.54   79389.98 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          0.41   79390.40 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   79390.40 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.29   79390.69 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.47   79391.16 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.46   79391.62 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.45   79392.07 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          0.45   79392.52 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.45   79392.98 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.46   79393.44 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.45   79393.89 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          0.46   79394.35 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.45   79394.80 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.45   79395.26 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.46   79395.72 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          0.45   79396.17 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.65   79396.82 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   79396.82 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   79396.82 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   79396.82 f
+  alto_reg/pila_registro/pila_registro_entrada[1][18] (pila_registro_n_registros8_4)
+                                                          0.00   79396.82 f
+  alto_reg/pila_registro/reg_1/registro_entrada[18] (registro_n_bits19_24)
+                                                          0.00   79396.82 f
+  alto_reg/pila_registro/reg_1/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   79396.82 f
+  data arrival time                                              79396.82
+
+  clock filtro_pipelining_clk_banda[1] (rise edge)    90702.96   90702.96
+  clock network delay (ideal)                             4.00   90706.96
+  clock uncertainty                                      -0.50   90706.46
+  alto_reg/pila_registro/reg_1/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   90706.46 r
+  library setup time                                     -0.19   90706.27
+  data required time                                             90706.27
+  --------------------------------------------------------------------------
+  data required time                                             90706.27
+  data arrival time                                              -79396.82
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11309.45
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_2/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[2])
+  Path Group: filtro_pipelining_clk_banda[2]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          170068.05  170068.05
+  clock network delay (ideal)                             4.00   170072.05
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   170072.05 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.47   170072.52 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   170072.52 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   170072.52 r
+  sos2_reg/U20/Y (BUFX2)                                  0.30   170072.81 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   170072.81 r
+  sos2_reg/mux/U129/Y (INVX1)                             0.31   170073.12 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.25   170073.38 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.80   170074.17 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.23   170074.41 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.16   170074.56 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.38   170074.94 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   170074.94 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   170074.94 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   170074.94 f
+  coeficiente_a22/U5/Y (INVX1)                            0.31   170075.25 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.36   170075.61 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.61   170076.22 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   170076.22 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.45   170076.67 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          0.47   170077.14 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.45   170077.59 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.45   170078.05 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.45   170078.50 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.45   170078.95 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          0.47   170079.42 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.45   170079.88 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.45   170080.33 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.45   170080.78 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          0.47   170081.25 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.45   170081.70 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.45   170082.16 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.45   170082.61 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          0.47   170083.08 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.45   170083.53 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.64   170084.17 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   170084.17 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   170084.17 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.45   170084.62 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.42   170085.05 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   170085.05 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   170085.05 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   170085.05 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           0.53   170085.58 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.67   170086.25 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   170086.25 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   170086.25 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.92   170087.17 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   170087.17 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   170087.17 f
+  add_225/U1_18/YS (FAX1)                                 0.91   170088.08 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   170088.08 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   170088.08 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.66   170088.73 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   170088.73 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   170088.73 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           0.92   170089.66 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   170089.66 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   170089.66 f
+  add_236/U1_18/YS (FAX1)                                 0.98   170090.64 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   170090.64 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   170090.64 f
+  ganancia_alto/U3/Y (INVX2)                              1.05   170091.69 r
+  ganancia_alto/U4/Y (INVX2)                              0.72   170092.41 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.53   170092.94 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          0.42   170093.36 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   170093.36 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.28   170093.64 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.48   170094.12 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.45   170094.58 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.45   170095.03 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          0.45   170095.48 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.45   170095.94 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.45   170096.39 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.47   170096.86 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          0.45   170097.31 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.45   170097.77 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.45   170098.22 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.45   170098.67 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          0.47   170099.14 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.64   170099.78 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   170099.78 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   170099.78 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   170099.78 f
+  alto_reg/pila_registro/pila_registro_entrada[2][18] (pila_registro_n_registros8_4)
+                                                          0.00   170099.78 f
+  alto_reg/pila_registro/reg_2/registro_entrada[18] (registro_n_bits19_23)
+                                                          0.00   170099.78 f
+  alto_reg/pila_registro/reg_2/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   170099.78 f
+  data arrival time                                              170099.78
+
+  clock filtro_pipelining_clk_banda[2] (rise edge)    181405.92  181405.92
+  clock network delay (ideal)                             4.00   181409.92
+  clock uncertainty                                      -0.50   181409.42
+  alto_reg/pila_registro/reg_2/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   181409.42 r
+  library setup time                                     -0.19   181409.23
+  data required time                                             181409.23
+  --------------------------------------------------------------------------
+  data required time                                             181409.23
+  data arrival time                                              -170099.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11309.45
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_3/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[3])
+  Path Group: filtro_pipelining_clk_banda[3]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          351473.97  351473.97
+  clock network delay (ideal)                             4.00   351477.97
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   351477.97 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.47   351478.44 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   351478.44 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   351478.44 r
+  sos2_reg/U20/Y (BUFX2)                                  0.31   351478.75 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   351478.75 r
+  sos2_reg/mux/U129/Y (INVX1)                             0.28   351479.03 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.28   351479.31 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.78   351480.09 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.25   351480.34 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.12   351480.47 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.38   351480.84 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   351480.84 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   351480.84 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   351480.84 f
+  coeficiente_a22/U5/Y (INVX1)                            0.31   351481.16 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.38   351481.53 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.59   351482.12 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   351482.12 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.47   351482.59 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          0.47   351483.06 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.44   351483.50 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.47   351483.97 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.47   351484.44 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.44   351484.88 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          0.47   351485.34 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.44   351485.78 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.47   351486.25 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.47   351486.72 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          0.44   351487.16 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.47   351487.62 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.47   351488.09 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.44   351488.53 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          0.47   351489.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.47   351489.47 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.62   351490.09 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   351490.09 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   351490.09 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.47   351490.56 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.41   351490.97 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   351490.97 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   351490.97 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   351490.97 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           0.53   351491.50 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.66   351492.16 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   351492.16 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   351492.16 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.94   351493.09 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   351493.09 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   351493.09 f
+  add_225/U1_18/YS (FAX1)                                 0.91   351494.00 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   351494.00 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   351494.00 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.66   351494.66 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   351494.66 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   351494.66 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           0.94   351495.59 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   351495.59 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   351495.59 f
+  add_236/U1_18/YS (FAX1)                                 0.97   351496.56 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   351496.56 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   351496.56 f
+  ganancia_alto/U3/Y (INVX2)                              1.03   351497.59 r
+  ganancia_alto/U4/Y (INVX2)                              0.75   351498.34 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.53   351498.88 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          0.41   351499.28 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   351499.28 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.28   351499.56 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.47   351500.03 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.47   351500.50 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.44   351500.94 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          0.47   351501.41 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.47   351501.88 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.44   351502.31 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.47   351502.78 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          0.44   351503.22 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.47   351503.69 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.47   351504.16 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.44   351504.59 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          0.47   351505.06 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.62   351505.69 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   351505.69 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   351505.69 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   351505.69 f
+  alto_reg/pila_registro/pila_registro_entrada[3][18] (pila_registro_n_registros8_4)
+                                                          0.00   351505.69 f
+  alto_reg/pila_registro/reg_3/registro_entrada[18] (registro_n_bits19_22)
+                                                          0.00   351505.69 f
+  alto_reg/pila_registro/reg_3/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   351505.69 f
+  data arrival time                                              351505.69
+
+  clock filtro_pipelining_clk_banda[3] (rise edge)    362811.91  362811.91
+  clock network delay (ideal)                             4.00   362815.91
+  clock uncertainty                                      -0.50   362815.41
+  alto_reg/pila_registro/reg_3/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   362815.41 r
+  library setup time                                     -0.19   362815.22
+  data required time                                             362815.22
+  --------------------------------------------------------------------------
+  data required time                                             362815.22
+  data arrival time                                              -351505.69
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11309.53
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_4/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[4])
+  Path Group: filtro_pipelining_clk_banda[4]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          714285.94  714285.94
+  clock network delay (ideal)                             4.00   714289.94
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   714289.94 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.44   714290.38 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   714290.38 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   714290.38 r
+  sos2_reg/U20/Y (BUFX2)                                  0.31   714290.69 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   714290.69 r
+  sos2_reg/mux/U129/Y (INVX1)                             0.31   714291.00 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.25   714291.25 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.81   714292.06 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.25   714292.31 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.12   714292.44 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.38   714292.81 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   714292.81 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   714292.81 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   714292.81 f
+  coeficiente_a22/U5/Y (INVX1)                            0.31   714293.12 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.38   714293.50 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.62   714294.12 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   714294.12 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.44   714294.56 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          0.44   714295.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.50   714295.50 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.44   714295.94 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.44   714296.38 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.50   714296.88 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          0.44   714297.31 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.44   714297.75 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.50   714298.25 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.44   714298.69 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          0.44   714299.12 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.44   714299.56 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.50   714300.06 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.44   714300.50 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          0.44   714300.94 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.50   714301.44 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.62   714302.06 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   714302.06 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   714302.06 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.44   714302.50 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.44   714302.94 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   714302.94 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   714302.94 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   714302.94 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           0.50   714303.44 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.69   714304.12 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   714304.12 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   714304.12 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.94   714305.06 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   714305.06 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   714305.06 f
+  add_225/U1_18/YS (FAX1)                                 0.94   714306.00 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   714306.00 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   714306.00 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.62   714306.62 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   714306.62 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   714306.62 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           0.94   714307.56 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   714307.56 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   714307.56 f
+  add_236/U1_18/YS (FAX1)                                 1.00   714308.56 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   714308.56 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   714308.56 f
+  ganancia_alto/U3/Y (INVX2)                              1.00   714309.56 r
+  ganancia_alto/U4/Y (INVX2)                              0.75   714310.31 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.50   714310.81 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          0.44   714311.25 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   714311.25 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.31   714311.56 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.44   714312.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.44   714312.44 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.50   714312.94 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          0.44   714313.38 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.44   714313.81 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.50   714314.31 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.44   714314.75 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          0.44   714315.19 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.44   714315.62 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.50   714316.12 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.44   714316.56 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          0.44   714317.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.69   714317.69 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   714317.69 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   714317.69 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   714317.69 f
+  alto_reg/pila_registro/pila_registro_entrada[4][18] (pila_registro_n_registros8_4)
+                                                          0.00   714317.69 f
+  alto_reg/pila_registro/reg_4/registro_entrada[18] (registro_n_bits19_21)
+                                                          0.00   714317.69 f
+  alto_reg/pila_registro/reg_4/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   714317.69 f
+  data arrival time                                              714317.69
+
+  clock filtro_pipelining_clk_banda[4] (rise edge)    725623.81  725623.81
+  clock network delay (ideal)                             4.00   725627.81
+  clock uncertainty                                      -0.50   725627.31
+  alto_reg/pila_registro/reg_4/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   725627.31 r
+  library setup time                                     -0.19   725627.12
+  data required time                                             725627.12
+  --------------------------------------------------------------------------
+  data required time                                             725627.12
+  data arrival time                                              -714317.69
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11309.44
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_5/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[5])
+  Path Group: filtro_pipelining_clk_banda[5]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          21757482.00
+                                                                 21757482.00
+  clock network delay (ideal)                             4.00   21757486.00
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   21757486.00 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.00   21757486.00 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   21757486.00 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   21757486.00 r
+  sos2_reg/U20/Y (BUFX2)                                  0.00   21757486.00 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   21757486.00 r
+  sos2_reg/mux/U129/Y (INVX1)                             2.00   21757488.00 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.00   21757488.00 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.00   21757488.00 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.00   21757488.00 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.00   21757488.00 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.00   21757488.00 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   21757488.00 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   21757488.00 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   21757488.00 f
+  coeficiente_a22/U5/Y (INVX1)                            2.00   21757490.00 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.00   21757490.00 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.00   21757490.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   21757490.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.00   21757490.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          2.00   21757492.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.00   21757492.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.00   21757492.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.00   21757492.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.00   21757492.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          2.00   21757494.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.00   21757494.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.00   21757494.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.00   21757494.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          2.00   21757496.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.00   21757496.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.00   21757496.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.00   21757496.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          2.00   21757498.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.00   21757498.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.00   21757498.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   21757498.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   21757498.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.00   21757498.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.00   21757498.00 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   21757498.00 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   21757498.00 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   21757498.00 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           2.00   21757500.00 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.00   21757500.00 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   21757500.00 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   21757500.00 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         2.00   21757502.00 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   21757502.00 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   21757502.00 f
+  add_225/U1_18/YS (FAX1)                                 0.00   21757502.00 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   21757502.00 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   21757502.00 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.00   21757502.00 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   21757502.00 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   21757502.00 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           2.00   21757504.00 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   21757504.00 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   21757504.00 f
+  add_236/U1_18/YS (FAX1)                                 0.00   21757504.00 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   21757504.00 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   21757504.00 f
+  ganancia_alto/U3/Y (INVX2)                              2.00   21757506.00 r
+  ganancia_alto/U4/Y (INVX2)                              0.00   21757506.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.00   21757506.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          2.00   21757508.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   21757508.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.00   21757508.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.00   21757508.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.00   21757508.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.00   21757508.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          2.00   21757510.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.00   21757510.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.00   21757510.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.00   21757510.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          2.00   21757512.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.00   21757512.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.00   21757512.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.00   21757512.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          2.00   21757514.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.00   21757514.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   21757514.00 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   21757514.00 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   21757514.00 f
+  alto_reg/pila_registro/pila_registro_entrada[5][18] (pila_registro_n_registros8_4)
+                                                          0.00   21757514.00 f
+  alto_reg/pila_registro/reg_5/registro_entrada[18] (registro_n_bits19_20)
+                                                          0.00   21757514.00 f
+  alto_reg/pila_registro/reg_5/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   21757514.00 f
+  data arrival time                                              21757514.00
+
+  clock filtro_pipelining_clk_banda[5] (rise edge)    21768714.00
+                                                                 21768714.00
+  clock network delay (ideal)                             4.00   21768718.00
+  clock uncertainty                                      -0.50   21768718.00
+  alto_reg/pila_registro/reg_5/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   21768718.00 r
+  library setup time                                     -0.19   21768718.00
+  data required time                                             21768718.00
+  --------------------------------------------------------------------------
+  data required time                                             21768718.00
+  data arrival time                                              -21757514.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11204.00
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_6/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[6])
+  Path Group: filtro_pipelining_clk_banda[6]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          20306218.00
+                                                                 20306218.00
+  clock network delay (ideal)                             4.00   20306222.00
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   20306222.00 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.00   20306222.00 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   20306222.00 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   20306222.00 r
+  sos2_reg/U20/Y (BUFX2)                                  0.00   20306222.00 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   20306222.00 r
+  sos2_reg/mux/U129/Y (INVX1)                             2.00   20306224.00 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.00   20306224.00 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.00   20306224.00 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.00   20306224.00 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.00   20306224.00 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.00   20306224.00 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   20306224.00 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   20306224.00 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   20306224.00 f
+  coeficiente_a22/U5/Y (INVX1)                            2.00   20306226.00 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.00   20306226.00 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.00   20306226.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   20306226.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.00   20306226.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          2.00   20306228.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.00   20306228.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.00   20306228.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.00   20306228.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.00   20306228.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          2.00   20306230.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.00   20306230.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.00   20306230.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.00   20306230.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          2.00   20306232.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.00   20306232.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.00   20306232.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.00   20306232.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          2.00   20306234.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.00   20306234.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.00   20306234.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   20306234.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   20306234.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.00   20306234.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.00   20306234.00 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   20306234.00 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   20306234.00 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   20306234.00 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           2.00   20306236.00 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.00   20306236.00 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   20306236.00 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   20306236.00 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         2.00   20306238.00 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   20306238.00 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   20306238.00 f
+  add_225/U1_18/YS (FAX1)                                 0.00   20306238.00 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   20306238.00 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   20306238.00 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.00   20306238.00 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   20306238.00 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   20306238.00 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           2.00   20306240.00 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   20306240.00 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   20306240.00 f
+  add_236/U1_18/YS (FAX1)                                 0.00   20306240.00 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   20306240.00 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   20306240.00 f
+  ganancia_alto/U3/Y (INVX2)                              2.00   20306242.00 r
+  ganancia_alto/U4/Y (INVX2)                              0.00   20306242.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.00   20306242.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          2.00   20306244.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   20306244.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.00   20306244.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.00   20306244.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.00   20306244.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.00   20306244.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          2.00   20306246.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.00   20306246.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.00   20306246.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.00   20306246.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          2.00   20306248.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.00   20306248.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.00   20306248.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.00   20306248.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          2.00   20306250.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.00   20306250.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   20306250.00 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   20306250.00 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   20306250.00 f
+  alto_reg/pila_registro/pila_registro_entrada[6][18] (pila_registro_n_registros8_4)
+                                                          0.00   20306250.00 f
+  alto_reg/pila_registro/reg_6/registro_entrada[18] (registro_n_bits19_19)
+                                                          0.00   20306250.00 f
+  alto_reg/pila_registro/reg_6/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   20306250.00 f
+  data arrival time                                              20306250.00
+
+  clock filtro_pipelining_clk_banda[6] (rise edge)    20317468.00
+                                                                 20317468.00
+  clock network delay (ideal)                             4.00   20317472.00
+  clock uncertainty                                      -0.50   20317472.00
+  alto_reg/pila_registro/reg_6/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   20317472.00 r
+  library setup time                                     -0.19   20317472.00
+  data required time                                             20317472.00
+  --------------------------------------------------------------------------
+  data required time                                             20317472.00
+  data arrival time                                              -20306250.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11222.00
+
+
+  Startpoint: secuencia/reloj_prioridad_salida_reg[0]
+              (falling edge-triggered flip-flop clocked by filtro_pipelining_clk_2x)
+  Endpoint: alto_reg/pila_registro/reg_7/registro_tmp_reg[18]
+            (rising edge-triggered flip-flop clocked by filtro_pipelining_clk_banda[7])
+  Path Group: filtro_pipelining_clk_banda[7]
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock filtro_pipelining_clk_2x (fall edge)          17403690.00
+                                                                 17403690.00
+  clock network delay (ideal)                             4.00   17403694.00
+  secuencia/reloj_prioridad_salida_reg[0]/CLK (DFFNEGX1)
+                                                          0.00   17403694.00 f
+  secuencia/reloj_prioridad_salida_reg[0]/Q (DFFNEGX1)
+                                                          0.00   17403694.00 r
+  secuencia/reloj_prioridad_salida[0] (reloj_prioridad_orden3_N_filtros8)
+                                                          0.00   17403694.00 r
+  sos2_reg/pila_reg_join_mux_seleccion[0] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   17403694.00 r
+  sos2_reg/U20/Y (BUFX2)                                  0.00   17403694.00 r
+  sos2_reg/mux/mux_seleccion[0] (mux_orden_mux3_4)        0.00   17403694.00 r
+  sos2_reg/mux/U129/Y (INVX1)                             2.00   17403696.00 f
+  sos2_reg/mux/U118/Y (NAND3X1)                           0.00   17403696.00 r
+  sos2_reg/mux/U137/Y (INVX1)                             0.00   17403696.00 f
+  sos2_reg/mux/U22/Y (AOI22X1)                            0.00   17403696.00 r
+  sos2_reg/mux/U20/Y (AND2X1)                             0.00   17403696.00 r
+  sos2_reg/mux/U19/Y (NAND3X1)                            0.00   17403696.00 f
+  sos2_reg/mux/mux_salida[6] (mux_orden_mux3_4)           0.00   17403696.00 f
+  sos2_reg/pila_reg_join_mux_salida[6] (pila_reg_join_mux_n_registros8_orden_mux3_0)
+                                                          0.00   17403696.00 f
+  coeficiente_a22/coeficiente_a22_in[6] (coeficiente_a22_n_bits19)
+                                                          0.00   17403696.00 f
+  coeficiente_a22/U5/Y (INVX1)                            2.00   17403698.00 r
+  coeficiente_a22/U13/Y (OR2X2)                           0.00   17403698.00 r
+  coeficiente_a22/sub_3_root_sub_0_root_sub_52_3/U2_1/YS (FAX1)
+                                                          0.00   17403698.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/A[1] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   17403698.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_1/YC (FAX1)
+                                                          0.00   17403698.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_2/YC (FAX1)
+                                                          2.00   17403700.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_3/YC (FAX1)
+                                                          0.00   17403700.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_4/YC (FAX1)
+                                                          0.00   17403700.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_5/YC (FAX1)
+                                                          0.00   17403700.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_6/YC (FAX1)
+                                                          0.00   17403700.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_7/YC (FAX1)
+                                                          2.00   17403702.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_8/YC (FAX1)
+                                                          0.00   17403702.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_9/YC (FAX1)
+                                                          0.00   17403702.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_10/YC (FAX1)
+                                                          0.00   17403702.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_11/YC (FAX1)
+                                                          2.00   17403704.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_12/YC (FAX1)
+                                                          0.00   17403704.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_13/YC (FAX1)
+                                                          0.00   17403704.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_14/YC (FAX1)
+                                                          0.00   17403704.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_15/YC (FAX1)
+                                                          2.00   17403706.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_16/YC (FAX1)
+                                                          0.00   17403706.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/U2_17/YS (FAX1)
+                                                          0.00   17403706.00 f
+  coeficiente_a22/sub_1_root_sub_0_root_sub_52_3/DIFF[17] (coeficiente_a22_n_bits19_DW01_sub_0)
+                                                          0.00   17403706.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/A[17] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   17403706.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_17/YC (FAX1)
+                                                          0.00   17403706.00 f
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/U1_18/YS (FAX1)
+                                                          0.00   17403706.00 r
+  coeficiente_a22/add_0_root_sub_0_root_sub_52_3/SUM[18] (coeficiente_a22_n_bits19_DW01_add_0)
+                                                          0.00   17403706.00 r
+  coeficiente_a22/coeficiente_a22_out[18] (coeficiente_a22_n_bits19)
+                                                          0.00   17403706.00 r
+  sub_1_root_sub_0_root_sub_222_2/B[19] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   17403706.00 r
+  sub_1_root_sub_0_root_sub_222_2/U12/Y (INVX1)           2.00   17403708.00 f
+  sub_1_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         0.00   17403708.00 f
+  sub_1_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_1)
+                                                          0.00   17403708.00 f
+  sub_0_root_sub_0_root_sub_222_2/A[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   17403708.00 f
+  sub_0_root_sub_0_root_sub_222_2/U2_18/YS (FAX1)         2.00   17403710.00 f
+  sub_0_root_sub_0_root_sub_222_2/DIFF[18] (filtro_pipelining_DW01_sub_0)
+                                                          0.00   17403710.00 f
+  add_225/A[18] (filtro_pipelining_DW01_add_2)            0.00   17403710.00 f
+  add_225/U1_18/YS (FAX1)                                 0.00   17403710.00 f
+  add_225/SUM[18] (filtro_pipelining_DW01_add_2)          0.00   17403710.00 f
+  sub_1_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   17403710.00 f
+  sub_1_root_sub_0_root_sub_230/U2_18/YS (FAX1)           0.00   17403710.00 f
+  sub_1_root_sub_0_root_sub_230/DIFF[18] (filtro_pipelining_DW01_sub_3)
+                                                          0.00   17403710.00 f
+  add_0_root_sub_0_root_sub_230/A[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   17403710.00 f
+  add_0_root_sub_0_root_sub_230/U1_18/YS (FAX1)           2.00   17403712.00 f
+  add_0_root_sub_0_root_sub_230/SUM[18] (filtro_pipelining_DW01_add_4)
+                                                          0.00   17403712.00 f
+  add_236/A[18] (filtro_pipelining_DW01_add_0)            0.00   17403712.00 f
+  add_236/U1_18/YS (FAX1)                                 0.00   17403712.00 f
+  add_236/SUM[18] (filtro_pipelining_DW01_add_0)          0.00   17403712.00 f
+  ganancia_alto/ganancia_alto_in[18] (ganancia_alto_n_bits19)
+                                                          0.00   17403712.00 f
+  ganancia_alto/U3/Y (INVX2)                              2.00   17403714.00 r
+  ganancia_alto/U4/Y (INVX2)                              0.00   17403714.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_5/YC (FAX1)
+                                                          0.00   17403714.00 f
+  ganancia_alto/add_2_root_sub_0_root_sub_52_4/U1_6/YS (FAX1)
+                                                          2.00   17403716.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/B[6] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   17403716.00 r
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U6/Y (INVX1)
+                                                          0.00   17403716.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_6/YC (FAX1)
+                                                          0.00   17403716.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_7/YC (FAX1)
+                                                          0.00   17403716.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_8/YC (FAX1)
+                                                          0.00   17403716.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_9/YC (FAX1)
+                                                          2.00   17403718.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_10/YC (FAX1)
+                                                          0.00   17403718.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_11/YC (FAX1)
+                                                          0.00   17403718.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_12/YC (FAX1)
+                                                          0.00   17403718.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_13/YC (FAX1)
+                                                          2.00   17403720.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_14/YC (FAX1)
+                                                          0.00   17403720.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_15/YC (FAX1)
+                                                          0.00   17403720.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_16/YC (FAX1)
+                                                          0.00   17403720.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_17/YC (FAX1)
+                                                          2.00   17403722.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/U2_18/YS (FAX1)
+                                                          0.00   17403722.00 f
+  ganancia_alto/sub_0_root_sub_0_root_sub_52_4/DIFF[18] (ganancia_alto_n_bits19_DW01_sub_0)
+                                                          0.00   17403722.00 f
+  ganancia_alto/ganancia_alto_out[18] (ganancia_alto_n_bits19)
+                                                          0.00   17403722.00 f
+  alto_reg/pila_reg_join_free_entrada[18] (pila_reg_join_free_n_registros8_0)
+                                                          0.00   17403722.00 f
+  alto_reg/pila_registro/pila_registro_entrada[7][18] (pila_registro_n_registros8_4)
+                                                          0.00   17403722.00 f
+  alto_reg/pila_registro/reg_7/registro_entrada[18] (registro_n_bits19_18)
+                                                          0.00   17403722.00 f
+  alto_reg/pila_registro/reg_7/registro_tmp_reg[18]/D (DFFSR)
+                                                          0.00   17403722.00 f
+  data arrival time                                              17403722.00
+
+  clock filtro_pipelining_clk_banda[7] (rise edge)    17414972.00
+                                                                 17414972.00
+  clock network delay (ideal)                             4.00   17414976.00
+  clock uncertainty                                      -0.50   17414976.00
+  alto_reg/pila_registro/reg_7/registro_tmp_reg[18]/CLK (DFFSR)
+                                                          0.00   17414976.00 r
+  library setup time                                     -0.19   17414976.00
+  data required time                                             17414976.00
+  --------------------------------------------------------------------------
+  data required time                                             17414976.00
+  data arrival time                                              -17403722.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                    11254.00
+
+
+1

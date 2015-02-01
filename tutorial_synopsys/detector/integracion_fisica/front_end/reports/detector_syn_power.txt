@@ -1,0 +1,45 @@
+Information: Updating design information... (UID-85)
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : detector_secuencia
+Version: E-2010.12-SP1
+Date   : Thu Aug 16 14:17:21 2012
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/achacon/VLSI/Curso_EDA_Uruguay/tutorial_synopsys/detector/integracion_fisica/front_end/libs/saed90nm_typ.db)
+
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+detector_secuencia     ForQA             saed90nm_typ
+divisor_frecuencia     ForQA             saed90nm_typ
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =   3.8678 uW   (91%)
+  Net Switching Power  = 371.8810 nW    (9%)
+                         ---------
+Total Dynamic Power    =   4.2397 uW  (100%)
+
+Cell Leakage Power     = 690.4322 nW
+
+1

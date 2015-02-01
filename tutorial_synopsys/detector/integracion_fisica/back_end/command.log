@@ -1,0 +1,1612 @@
+#@ # 
+#@ # Running icc_shell Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ # Date:   Wed Apr 25 18:12:18 2012
+#@ # Run by: vlsi21@zener.ie.itcr.ac.cr
+#@ 
+
+start_gui
+uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/jvalverde/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ create_mw_lib  -technology /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/vlsi21/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/vlsi21/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ create_mw_lib  -technology /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/vlsi21/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/jvalverde/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ #create_mw_lib  -technology /home/jvalverde/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/jvalverde/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/jvalverde/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ #create_mw_lib  -technology /home/jvalverde/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/jvalverde/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/tutorial_synopsys/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/vlsi21/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ create_mw_lib  -technology /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/jvalverde/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/vlsi21/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/vlsi21/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ create_mw_lib  -technology /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/vlsi21/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+uplevel #0 source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+#@ ####################################################################################################################################
+#@ #Institución:                          Instituto Tecnológico de Costa Rica
+#@ 
+#@ #Realiza por:		   Jairo Mauricio Valverde Cruz           jmvc04@gmail.com
+#@ 
+#@ #Proyecto:   Detector de secuencia: 1101. Proyecto creado con fines didácticos.
+#@ 
+#@ #Herramienta:        IC Compiler   Version E-2010.12-ICC-SP1 for linux -- Jan 10, 2011
+#@ 
+#@ #Fecha de creación:  01 Marzo 2011, editado 29 Agosto 2011
+#@ 
+#@ #Refrencias (detalladas en el Manual - Wiki):
+#@ # 1. Bindu, 2009.
+#@ # 2. Manuales de IC Compiler.            
+#@ ####################################################################################################################################
+#@ 
+#@ # El siguente comando concatena al search path los directorios listados
+#@ set search_path {/home/vlsi21/detector/integracion_fisica/back_end} 
+#@ set search_path    "$search_path ./libs ./db ./source ./scripts"
+#@ 
+#@ # Configuración de las bibliotecas de síntesis. 
+#@ set link_library  "* saed90nm_max.db saed90nm_min.db saed90nm_typ.db"
+#@ set target_library "saed90nm_max.db"
+#@ set symbol_library "saed90nm.sdb"
+#@ 
+#@ #Muestra la configuración de las biliotecas de síntesis.
+#@ echo "\n\nSettings:"
+#@ echo "search_path:       $search_path"
+#@ echo "link_library:      $link_library"
+#@ echo "target_library:    $target_library"
+#@ echo "symbol_library:    $symbol_library"
+#@ 
+#@ #remover diseños anteriores
+#@ remove_design -designs
+#@ 
+#@ #Definir VSS y VDD
+#@ set mw_logic0_net VSS
+#@ set mw_logic1_net VDD
+#@ 
+#@ #Especificar los archivos TLUplus:Son utilizados para extraer el archivo ".spef" (capacitancias parásitas)
+#@ set_tlu_plus_files -max_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmax.tluplus -min_tluplus ./libs/tluplus/saed90nm_1p9m_1t_Cmin.tluplus -tech2itf_map ./libs/tech/tech2itf.map
+#@ 
+#@ #Crear una nueva base de datos Milkway, solo se hace una vez para cada diseño
+#@ #create_mw_lib  -technology /home/vlsi21/detector/integracion_fisica/back_end/libs/tech/astroTechFile.tf -mw_reference_library {/home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/} -bus_naming_style {[%d]}  /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Abrir la base de datos MIlkway
+#@ open_mw_lib ./libs/saed90nm_fr/DETECTOR.mw
+#@ 
+#@ #Importa el Gate-Level-Netlist obtenido en la Síntesis RTL
+#@ import_designs -format verilog {detector_syn.v} -top detector_secuencia
+#@ 
+#@ #Resolver múltiples instancias
+#@ uniquify_fp_mw_cel
+#@ link
+#@ 
+#@ #Leer las especificaciones de temporizado. Archivo sdc "synopsys design constraints"
+#@ read_sdc {detector_syn.sdc}
+#@ define_proc_attributes all_physical_only_cells -info "Get the collection of physical only cells" -define_args {
+#@ { -coordinates "coordinates of bounding box" "llx lly urx ury" string {optional}} 
+#@ { -lib_cells "get cells related to these objects" "objects" list {optional}} 
+#@ { -cell_name "list of cell name patterns and collections" "patterns" list {optional}} 
+#@ { "" "Existing collection" "arguments" list {optional}} 
+#@ }
+#@ define_proc_attributes all_physical_only_nets  -info "Get the collection of physical only nets" -define_args {
+#@ { "" "list of cell name patterns and collections" "arguments" list {optional}} 
+#@ } 
+#@ define_proc_attributes all_drc_violated_nets -info "Returns all DRC violated nets" -define_args { 
+#@ { -max_capacitance "max Cap DRC violated nets" "" string {optional}} 
+#@ { -max_transition "max transition time DRC violated nets" "" string {optional}} 
+#@ { -max_fanout "max fanout DRC violated nets" "" string {optional}}
+#@ { -threshold "Captures all values more than or equal to threshold" "threshold" string {optional}} 
+#@ { -bound "Captures all values less than or equal to bound bound" "upper" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments"  list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanin -info "return pins or cells in transitive fanin" -define_args { 
+#@ { -to "set of sink ports, pins, or nets" "sink_list" list {optional}} 
+#@ { -startpoints_only  "return only the timing startpoints" "" string {optional}} 
+#@ { -exclude_bboxes "black-boxes are not included in return-set" "" string {optional}} 
+#@ { -break_on_bboxes  "traversal stops at black-boxes" "" string {optional}} 
+#@ { -only_cells "only cells are included in the return-set" "" string {optional}} 
+#@ { -flat "trace entire design instead of just current hierarchy" "" string {optional}} 
+#@ { -levels "maximum number of levels of logic to traverse" "n" string {optional}} 
+#@ }
+#@ define_proc_attributes all_high_fanout -info "Returns all high fanout objects" -define_args { 
+#@ { -nets "high fanout nets" "" string {optional}} 
+#@ { -threshold "high fanout threshold: value>=0" "threshold" string {optional}} 
+#@ { -through_buf_inv "treat buffers and inverters as transparent -check for transitive fanout" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_ideal_nets -info "Returns all ideal nets" -define_args { 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_inputs -info "return input ports" -define_args { 
+#@ { -clock "ports with input delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive input delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive input delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_outputs -info "return output ports" -define_args { 
+#@ { -clock "ports with output delay relative to clock" "clock" string {optional}} 
+#@ { -edge_triggered "ports with non-level-sensitive output delay" "" string {optional}} 
+#@ { -level_sensitive "ports with level-sensitive output delay" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_threestate -info "Returns all threestate objects" -define_args { 
+#@ { -nets "threestate nets" "" string {optional}} 
+#@ { "" "objects patterns OR collection" "arguments" string {optional}} 
+#@ }
+#@ define_proc_attributes all_dont_touch -info "Returns all dont touch objects" -define_args { 
+#@ { -nets "Dont touch nets" "" string {optional}} 
+#@ { -cells "Dont touch cells" "" string {optional}} 
+#@ { "" "Dont touch patterns OR collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_size_only_cells -info "Returns all size_only cells" -define_args { 
+#@ { "" "Object patterns OD collections" "patterns" string {optional}} 
+#@ }
+#@ define_proc_attributes all_clocks -info "return all clocks in the current design"  
+#@ define_proc_attributes all_designs -info "return all designs" 
+#@ define_proc_attributes all_registers  -info "create a collection of register cells or pins" -define_args { 
+#@ { -no_hierarchy "only search the top level of hierarchy" "" string {optional}} 
+#@ {-rise_clock "return registers triggered by rise edge of this clock" "rise_clock" string {optional}}
+#@ {-fall_clock "return registers triggered by rise edge of this clock" "fall_clock" string {optional}}
+#@ { -clock "return registers of this clock" "clock" string {optional}} 
+#@ { -cells "return cells - this is the default" "" string {optional}} 
+#@ { -data_pins "return data_pins" "" string {optional}} 
+#@ { -clock_pins "return clock_pins" "" string {optional}} 
+#@ { -slave_clock_pins "return slave_clock_pin" "" string {optional}} 
+#@ { -inverted_output "return FF's with inverted output phase" "" string {optional}} 
+#@ { -output_pins "return output_pins" "" string {optional}} 
+#@ { -level_sensitive "only consider level sensitive registers" "" string {optional}} 
+#@ { -edge_triggered "only consider edge triggered register" "" string {optional}} 
+#@ { -master_slave "only consider master/slave registers" "" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_cells -info "return critical cells" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ }
+#@ define_proc_attributes all_critical_pins -info "return critical pins" -define_args { 
+#@ { -slack_range "critical range to select cells:value>=0" "range_value" string {optional}} 
+#@ { -type "pintype: Values: endpoint, startpoint" "pin_type" string {optional}} 
+#@ }
+#@ define_proc_attributes get_magnet_cells -info "return magnet cells collection" -define_args {
+#@ { -stop_by_sequential_cells "don't pull sequential cells" "" string {optional}} 
+#@ { -exclude_buffers "skip through buffers in levels" "" string {optional}} 
+#@ { -logical_level "number of logical levels to pull for placement" "integer" string {optional}} 
+#@ { -stop_points "list of stop points where to stop magnetizing paths" "object_list" list {optional}} 
+#@ { "" "a list of magnet objects" "magnet_objects" list {optional}} 
+#@ }
+#@ define_proc_attributes all_fanout -info "return pins or cells in transitive fanout" -define_args {
+#@ {-clock_tree "return all clock tree components in design" "" string {optional}}
+#@ {-from "set of source ports, pins, or nets" "source_list" list {optional}}
+#@ {-endpoints_only "return only the timing endpoints" "" string {optional}}
+#@ {-exclude_bboxes "black-boxes are not included in return-set" "" string {optional}}
+#@ {-break_on_bboxes "traversal stops at black-boxes" "" string {optional}}
+#@ {-only_cells "only cells are included in the return-set" "" string {optional}}
+#@ {-flat "trace entire design instead of just current hierarchy" "" string {optional}}
+#@ {-levels "maximum number of levels of logic to traverse" "n" string {optional}}
+#@ }
+#@ define_proc_attributes all_physical_only_ports -info " Get the collection of physical only ports" -define_args {
+#@ {"" "list of cell name patterns and collections" "arguments" list {optional}}
+#@ }
+#@ # -- End source /usr/local/synopsys/app/ic-compiler/auxx/syn/all_command_option_def.tcl
+
+#@ 
+#@ ##################################################Floorplanning############################################################
+#@ 
+#@ #Iniciar la etapa de descripción física (floorplan)
+#@ initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0 -pin_snap
+#@ 
+#@ #Conectar los pines de alimentación del chip
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS"
+#@ derive_pg_connection -power_net "VDD" -ground_net "VSS" -tie
+#@ 
+#@ #Crear los anillos de alimentación para VSS y VDD
+#@ create_rectangular_rings -nets {VSS} -left_offset 0.5 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 0.5 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 0.5 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 0.5 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_rectangular_rings -nets {VDD} -left_offset 1.8 -left_segment_layer M6 -left_segment_width 1.0 -extend_ll -extend_lh -right_offset 1.8 -right_segment_layer M6 -right_segment_width 1.0 -extend_rl -extend_rh -bottom_offset 1.8 -bottom_segment_layer M7 -bottom_segment_width 1.0 -extend_bl -extend_bh -top_offset 1.8 -top_segment_layer M7 -top_segment_width 1.0 -extend_tl -extend_th
+#@ 
+#@ create_power_strap -nets { VDD } -layer M6 -direction vertical -width 3
+#@ create_power_strap -nets { VSS } -layer M6 -direction vertical -width 3
+#@ 
+#@ ##################################################Placement##############################################################
+#@ #Reducir la cantidad de buffers e inversores, sin afectar la calidad del resultado
+#@ set_buffer_opt_strategy -effort low
+#@ 
+#@ #Iniciar la etapa de colocación física (placement)
+#@ create_fp_placement
+#@ 
+#@ #Guardar el diseño de la colocación física
+#@ save_mw_cel -as detector_placement
+#@ 
+#@ ##################################################Routing################################################################
+#@ #Ininicializa routing
+#@ route_zrt_auto -max_detail_route_iterations 10
+#@ 
+#@ #Verificar el Routing
+#@ verify_zrt_route
+#@ 
+#@ #Extraer el netlist
+#@ write_verilog ./db/detector_phy.v
+#@ 
+#@ #########################################################################################################################
+#@ 
+#@ #Extraer las capcitancias parásitas
+#@ write_parasitics -output {./db/detector_phy.spef}
+#@ 
+#@ #Escribir el archivo con los datos de retado del layout. Standard Delay Format (SDF)
+#@ write_sdf ./db/detector_phy.sdf
+#@ 
+#@ #Extraer el archivo con las especificaciones de temporizado. sdc (Synopsys Design Constraints)
+#@ write_sdc ./db/detector_phy.sdc
+#@ 
+#@ #Escribir el archivo .ddc y el .def
+#@ write -format ddc -output {./db/detector_phy.ddc}
+#@ write_def -output "/home/vlsi21/detector/integracion_fisica/back_end/db/detector_phy.def"
+#@ 
+#@ #Guardar el diseño después del enrutado físico:
+#@ save_mw_cel -as detector_routing
+#@ 
+#@ #Crear el GSDII
+#@ write_stream -format gds -lib_name /home/vlsi21/detector/integracion_fisica/back_end/libs/saed90nm_fr/DETECTOR.mw -cells {detector_routing } ./db/GDSII_detector
+#@ 
+#@ #Reportes Routing
+#@ #report_qor > reports/detector_phy_qor.txt
+#@ report_power > reports/detector_phy_power.txt
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/vlsi21/detector/integracion_fisica/back_end/scripts/detector_phy.tcl
+
+gui start
+start_gui
+clear
+cls
+cl
+clean
+clear
+cls
+quit
